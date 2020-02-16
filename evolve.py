@@ -91,19 +91,26 @@ class EvolveCNN(object):
         Utils.save_population_at_begin(str(self.pops), self.pops.gen_no)
 
     def do_work(self, max_gen):
+        '''
+        运行系统
+        '''
+        # TODO: 暂时为方便测试，每次将IS_RUNNING标志置0
+        StatusUpdateTool.end_evolution()
+
         Log.info('*'*25)
-        # the step 1
+        # the step 1 
         if StatusUpdateTool.is_evolution_running():
+            # 若标志位为正在运行，先检索最近种群号，加载种群信息
             Log.info('Initialize from existing population data')
             gen_no = Utils.get_newest_file_based_on_prefix('begin')
             if gen_no is not None:
                 Log.info('Initialize from %d-th generation' % (gen_no))
-                # 加载种群信息
                 pops = Utils.load_population('begin', gen_no)
                 self.pops = pops
             else:
                 raise ValueError('The running flag is set to be running, but there is no generated population stored')
         else:
+            # 若标志位为0，则初始化种群
             gen_no = 0
             Log.info('Initialize...')
             self.initialize_population()

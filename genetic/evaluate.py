@@ -4,6 +4,9 @@ from multiprocessing import Process
 import time, os, sys
 from asyncio.tasks import sleep
 
+from collections import defaultdict, OrderedDict
+import json
+
 
 class FitnessEvaluate(object):
     def __init__(self, individuals, log):
@@ -11,6 +14,9 @@ class FitnessEvaluate(object):
         self.log = log
 
     def generate_to_python_file(self):
+        '''
+        生成py执行脚本
+        '''
         self.log.info('Begin to generate python files')
         for indi in self.individuals:
             Utils.generate_pytorch_file(indi)
@@ -20,7 +26,7 @@ class FitnessEvaluate(object):
         """
         load fitness from cache file
         """
-        # 从cache文件中查找fitness数据
+        # 从cache文件中查找fitness数据，防止重复训练，其中_key为hash值
         self.log.info('Query fitness from cache')
         _map = Utils.load_cache_data()
         _count = 0
@@ -30,7 +36,7 @@ class FitnessEvaluate(object):
                 _count += 1
                 _acc = _map[_key]
                 self.log.info('Hit the cache for %s, key:%s, acc:%.5f, assigned_acc:%.5f' %
-                              (indi.id, _key, float(_acc), indi.acc))
+                                (indi.id, _key, float(_acc), indi.acc))
                 indi.acc = float(_acc)
         self.log.info('Total hit %d individuals for fitness' % (_count))
 
@@ -51,6 +57,7 @@ class FitnessEvaluate(object):
                 while gpu_id is None:
                     time.sleep(300)
                     gpu_id = GPUTools.detect_availabel_gpu_id()
+                
                 if gpu_id is not None:
                     file_name = indi.id
                     self.log.info('Begin to train %s' % (file_name))
@@ -72,16 +79,27 @@ class FitnessEvaluate(object):
                 file_name = indi.id
                 self.log.info('%s has inherited the fitness as %.5f, no need to evaluate' %
                               (file_name, indi.acc))
-                f = open('./populations/after_%s.txt' % (file_name[4:6]), 'a+')
-                f.write('%s=%.5f\n' % (file_name, indi.acc))
-                f.flush()
-                f.close()
+                # f = open('./populations/after_%s.json' % (file_name[4:6]), 'a+')
+                # f.write('%s=%.5f\n' % (file_name, indi.acc))
+                f = open('./populations/after_%s.json' % (file_name[4:6]), 'r')
+                info = json.load(f)
+
+                individual = defaultdict(list)
+                individual["file_name"] = file_name
+                individual["accuracy"] = indi.acc
+
+                info["cache"].append(individual)
+                json_str = json.dumps(info)
+                with open('./populations/after_%s.json' % (file_name[4:6]), 'w') as json_file:
+                    json_file.write(json_str)
+                
+                # f.flush()
+                # f.close()
         """
         once the last individual has been pushed into the gpu, the code above will finish.
         so, a while-loop need to be insert here to check whether all GPU are available.
         Only all available are available, we can call "the evaluation for all individuals
         in this generation" has been finished.
-
         """
         if has_evaluated_offspring:
             all_finished = False
@@ -97,15 +115,19 @@ class FitnessEvaluate(object):
         Before doing so, individuals that have been evaluated in this run should retrieval their fitness first.
         """
         if has_evaluated_offspring:
-            file_name = './populations/after_%s.txt' % (self.individuals[0].id[4:6])
+            file_name = './populations/after_%s.json' % (self.individuals[0].id[4:6])
             assert os.path.exists(file_name) == True
             f = open(file_name, 'r')
-            fitness_map = {}
-            for line in f:
-                if len(line.strip()) > 0:
-                    line = line.strip().split('=')
-                    fitness_map[line[0]] = float(line[1])
-            f.close()
+            
+            # fitness_map = {}
+            # for line in f:
+            #     if len(line.strip()) > 0:
+            #         line = line.strip().split('=')
+            #         fitness_map[line[0]] = float(line[1])
+            # f.close()
+            info = json.load(f)
+            fitness_map = info["populations"]
+
             for indi in self.individuals:
                 if indi.acc == -1:
                     if indi.id not in fitness_map:

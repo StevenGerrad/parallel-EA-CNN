@@ -5,8 +5,10 @@ import random
 import math
 import torch
 
-from component import Edge, Vertex
+from genetic.component import Edge, Vertex
 
+from collections import defaultdict, OrderedDict
+import json
 
 class Individual(object):
     def __init__(self, params, indi_no):
@@ -18,10 +20,17 @@ class Individual(object):
         self.number_id = 0  # for record the latest number of basic unit
         self.max_len = params['max_len']
         self.image_channel = params['image_channel']
+        self.output_size_channel = params['num_class']
+
+        # TODO: output_channles为list, 是用来表示啥的???
         self.output_channles = params['output_channel']
 
-        t_vertices = params["vertices"]
-        t_edges = params["edges"]
+        self.params = params
+        
+
+    def initialize(self):
+        t_vertices = self.params["net"]["vertices"]
+        t_edges = self.params["net"]["edges"]
 
         self.vertices = []
         for ver in t_vertices:
@@ -41,44 +50,13 @@ class Individual(object):
             self.edges.append(t_e)
 
         for i, ver in enumerate(self.vertices):
-            for j in t_vertices[i]["edges_in"]:
-                ver.edges_in.add(self.edges[j])
-            for j in t_vertices[i]["edges_out"]:
-                ver.edges_out.add(self.edges[j])
+            if "edges_in" in t_vertices[i]:
+                for j in t_vertices[i]["edges_in"]:
+                    ver.edges_in.add(self.edges[j])
+            if "edges_out" in t_vertices[i]:
+                for j in t_vertices[i]["edges_out"]:
+                    ver.edges_out.add(self.edges[j])
         # self.units = []
-
-    def initialize(self):
-        # initialize how many resnet unit/pooling layer/densenet unit will be used
-        num_resnet = np.random.randint(self.min_resnet , self.max_resnet+1)
-        num_pool = np.random.randint(self.min_pool , self.max_pool+1)
-        num_densenet = np.random.randint(self.min_densenet, self.max_densenet+1)
-
-        # find the position where the pooling layer can be connected
-        # 随机排列resnet、pool、densenet的位置
-        total_length = num_resnet + num_pool + num_densenet
-        all_positions = np.zeros(total_length, np.int32)
-        if num_resnet > 0: all_positions[0:num_resnet] = 1;
-        if num_pool > 0: all_positions[num_resnet:num_resnet+num_pool] = 2;
-        if num_densenet > 0 : all_positions[num_resnet+num_pool:num_resnet+num_pool+num_densenet] = 3;
-        for _ in range(10):
-            np.random.shuffle(all_positions)
-        while all_positions[0] == 2: # pooling should not be the first unit
-            np.random.shuffle(all_positions)
-
-        # initialize the layers based on their positions
-        input_channel = self.image_channel
-        for i in all_positions:
-            if i == 1:
-                resnet = self.init_a_resnet(_number=None, _amount=None, _in_channel=input_channel, _out_channel=None)
-                input_channel = resnet.out_channel
-                self.units.append(resnet)
-            elif i == 2:
-                pool = self.init_a_pool(_number=None, _max_or_avg=None)
-                self.units.append(pool)
-            elif i == 3:
-                densenet = self.init_a_densenet(_number=None, _amount=None, _k=None, _max_input_channel=None, _in_channel=input_channel)
-                input_channel = densenet.out_channel
-                self.units.append(densenet)
 
     def add_edge(self,
                  from_vertex_id,
@@ -110,7 +88,8 @@ class Individual(object):
         '''
         按顺序计算神经网络每层的输入输出参数
         '''
-        self.vertices[0].input_channel = self.input_size_channel
+        # self.vertices[0].input_channel = self.input_size_channel
+        self.vertices[0].input_channel = self.image_channel     # 更名为image_channel
         # self.vertices[0].output_channel = self.input_size_channel
         # self.vertices[-1].input_channel = self.output_size_channel
         # self.vertices[-1].output_channel = self.output_size_channel
@@ -124,23 +103,49 @@ class Individual(object):
                 vertex.input_channel += edge.output_channel
 
     def __str__(self):
-        _str=''
-        for i, vertex in enumerate(self.vertices[1:], start=1):
-            _str.join('vertex [', i, '].{}'.format(vertex.input_channel))
-            for edge in vertex.edges_in:
-                f_ver = self.vertices.index(edge.from_vertex)
-                if edge.type == 'identity':
-                    f_h = 'N'
-                else:
-                    f_h = edge.filter_half_height
-                if edge.type == 'identity':
-                    f_w = 'N'
-                else:
-                    f_w = edge.filter_half_width
-                _str.join(', {}.{}_s{},{},{}'.format(f_ver, edge.type[0], edge.stride_scale, f_h, f_w))
-            _str.join('\n')
-        _str.join('[calculate_flow] finish\n')
-        return '\n'.join(_str)
+        '''
+        由Population._str_调用, 写入种群记录json文件
+        '''
+        # _str=''
+        # for i, vertex in enumerate(self.vertices[1:], start=1):
+        #     _str.join('vertex [', i, '].{}'.format(vertex.input_channel))
+        #     for edge in vertex.edges_in:
+        #         f_ver = self.vertices.index(edge.from_vertex)
+        #         if edge.type == 'identity': f_h = 'N'
+        #         else: f_h = edge.filter_half_height
+        #         if edge.type == 'identity': f_w = 'N'
+        #         else: f_w = edge.filter_half_width
+        #         _str.join(', {}.{}_s{},{},{}'.format(f_ver, edge.type[0], edge.stride_scale, f_h, f_w))
+        #     _str.join('\n')
+        # _str.join('[calculate_flow] finish\n')
+
+        net = defaultdict(list)
+
+        for ver in self.vertices:
+            t_vertex = defaultdict(list)
+
+            for edg in ver.edges_in:
+                t_vertex["edges_in"].append(self.edges.index(edg))
+            for edg in ver.edges_out:
+                t_vertex["edges_out"].append(self.edges.index(edg))
+            t_vertex["type"] = ver.type
+            t_vertex["inputs_mutable"] = ver.inputs_mutable
+            t_vertex["outputs_mutable"] = ver.outputs_mutable
+            t_vertex["properties_mutable"] = ver.properties_mutable
+
+            net["vertices"].append(t_vertex)
+        
+        for edg in self.edges:
+            t_edge = defaultdict(list)
+
+            t_edge["from_vertex"] = self.vertices.index(edg.from_vertex)
+            t_edge["to_vertex"] = self.vertices.index(edg.to_vertex)
+            t_edge["type"] = edg.type
+
+            net["edges"].append(t_edge)
+
+        # return '\n'.join(_str)
+        return json.dumps(net)
 
     def mutate_layer_size(self, v_list=[], s_list=[]):
         for i in range(len(v_list)):
@@ -206,10 +211,55 @@ class Individual(object):
                 return True
         return False
 
+    def uuid(self):
+        '''
+        编辑神经网络结构序列，要保证同一结构网络序列一致
+        '''
+        _str = []
+        # 先对edges进行排序，方便后续处理
+        e_list = []
+        for edg in self.edges:
+            ind_f = self.vertices.index(edg.from_vertex)
+            ind_t = self.vertices.index(edg.to_vertex)
+            e_list.append((ind_f, ind_t, edg))
+        e_list = sorted(e_list, key=lambda x: (x[0], x[1]))
+        
+        for index, vert in enumerate(self.vertices):
+            _sub_str = []
+            # 处理vertex层
+            if vert.type == 'linear':
+                _sub_str.append('linear')
+            elif vert.type == 'bn_relu':
+                _sub_str.append('bn_relu')
+            elif vert.type == 'Global Pooling':
+                # Global Pooling 实际上应包含最后的MLP层，但不写也没关系
+                _sub_str.append('Global Pooling')
+            # 处理edges_in
+            for inf_f, _, edg in e_list:
+                if edg in vert.edges_in:
+                    if edg.type == 'identity':
+                        _sub_str.append('identity')
+                    elif edg.type == 'conv':
+                        _sub_str.append('conv')
+                        _sub_str.append('from vertex%d' % (ind_f))
+                        _sub_str.append('depth_factor:%d' % (edg.depth_f))
+                        _sub_str.append('filter_half_width:%d' % (edg.filter_half_width))
+                        _sub_str.append('filter_half_height:%d' % (edg.filter_half_height))
+                        _sub_str.append('stride_scale:%d' % (edg.stride_scale))
+            
+            _str.append('%s%s%s' % ('[', ','.join(_sub_str), ']'))
+        
+        _final_str_ = '-'.join(_str)
+        _final_utf8_str_= _final_str_.encode('utf-8')
+        _hash_key = hashlib.sha224(_final_utf8_str_).hexdigest()
+        return _hash_key, _final_str_
+
     def file_string(self):
         '''
         生成pytorch文件中的
         '''
+        # 先理顺卷积网络整体结构
+        self.calculate_flow()
         # layer层初始化语句
         unit_list = []
         unit_list.append('self.globalPool = torch.nn.AdaptiveAvgPool2d((1, 1))')
@@ -222,7 +272,7 @@ class Individual(object):
                 _str +=     'torch.nn.ReLU(inplace=True)))'
             elif vertex.type == 'Global Pooling':
                 _str += 'self.layer_vertex.append(torch.nn.Sequential('
-                _str +=         'torch.nn.Linear(%d, %d)))' % (vertex.input_channel, self.output_size_channel)
+                _str += 'torch.nn.Linear(%d, %d)))' % (vertex.input_channel, self.output_size_channel)
             else:
                 _str += 'self.layer_vertex.append(None)'
             _str += '\n'
@@ -256,8 +306,9 @@ class Individual(object):
             # 处理edges in的过程
             if len(vert.edges_in) == 1:
                 # 若只有一条链接边
-                if vert.edges_in[0].type == 'conv':
-                    ind_edg = self.edges.index(vert.edges_in[0])
+                edge = list(vert.edges_in)[0]
+                if edge.type == 'conv':
+                    ind_edg = self.edges.index(edge)
                     _str += 'x%d = self.layer_edge[%d](x%d)' % (index, ind_edg, index - 1)
                 else:
                     _str += 'x%d = x%d' % (index, index - 1)
@@ -294,6 +345,16 @@ class Individual(object):
             forward_list.append(_str)
         return unit_list, forward_list
 
+
+######################################################################################################
+#
+# 
+# 
+# 
+# 
+######################################################################################################
+
+
 class Population(object):
     def __init__(self, params, gen_no):
         self.gen_no = gen_no
@@ -303,10 +364,12 @@ class Population(object):
         self.individuals = []
 
     def initialize(self):
-        for _ in range(self.pop_size):
+        for i in range(self.pop_size):
             indi_no = 'indi%02d%02d' % (self.gen_no, self.number_id)
             self.number_id += 1
-            indi = Individual(self.params, indi_no)
+            param_item = self.params
+            param_item["net"] = self.params["populations"][i]
+            indi = Individual(param_item, indi_no)
             indi.initialize()
             self.individuals.append(indi)
 
@@ -320,11 +383,21 @@ class Population(object):
             self.individuals.append(indi)
 
     def __str__(self):
-        _str = []
+        '''
+        由EvolveCNN.initialize_population和.environment_selection调用，将种群写入种群记录文件
+        '''
+        # _str = []
+        # for ind in self.individuals:
+        #     _str.append(str(ind))
+        #     _str.append('-' * 100)
+        # return '\n'.join(_str)
+
+        _str = defaultdict(list)
         for ind in self.individuals:
-            _str.append(str(ind))
-            _str.append('-' * 100)
-        return '\n'.join(_str)
+            ind_item = json.loads(str(ind))
+            _str["populations"].append(ind_item)
+        return json.dumps(_str)
+
 
 
 def test_individual(params):

@@ -1,0 +1,143 @@
+2020-02-16 08:44:58,025 INFO    : *************************
+2020-02-16 08:44:58,025 INFO    : Initialize from existing population data
+2020-02-16 08:44:58,035 INFO    : Initialize from 0-th generation
+2020-02-16 08:46:38,106 INFO    : *************************
+2020-02-16 08:46:38,109 INFO    : Initialize from existing population data
+2020-02-16 08:46:38,212 INFO    : Initialize from 0-th generation
+2020-02-16 09:52:37,169 INFO    : *************************
+2020-02-16 09:52:37,172 INFO    : Initialize from existing population data
+2020-02-16 09:52:37,173 INFO    : Initialize from 0-th generation
+2020-02-16 09:53:25,481 INFO    : *************************
+2020-02-16 09:53:25,485 INFO    : Initialize from existing population data
+2020-02-16 09:53:25,486 INFO    : Initialize from 0-th generation
+2020-02-16 10:01:44,345 INFO    : *************************
+2020-02-16 10:01:44,349 INFO    : Initialize from existing population data
+2020-02-16 10:01:44,351 INFO    : Initialize from 0-th generation
+2020-02-16 10:41:08,457 INFO    : *************************
+2020-02-16 10:41:08,460 INFO    : Initialize from existing population data
+2020-02-16 10:41:08,461 INFO    : Initialize from 0-th generation
+2020-02-16 10:43:05,207 INFO    : *************************
+2020-02-16 10:43:05,210 INFO    : Initialize from existing population data
+2020-02-16 10:43:05,211 INFO    : Initialize from 0-th generation
+2020-02-16 12:11:39,954 INFO    : *************************
+2020-02-16 12:11:39,957 INFO    : Initialize from existing population data
+2020-02-16 12:11:39,959 INFO    : Initialize from 0-th generation
+2020-02-16 12:12:37,397 INFO    : *************************
+2020-02-16 12:12:37,400 INFO    : Initialize from existing population data
+2020-02-16 12:12:37,402 INFO    : Initialize from 0-th generation
+2020-02-16 12:16:10,942 INFO    : *************************
+2020-02-16 12:16:10,946 INFO    : Initialize from existing population data
+2020-02-16 12:16:10,948 INFO    : Initialize from 0-th generation
+2020-02-16 12:22:22,838 INFO    : *************************
+2020-02-16 12:22:22,840 INFO    : Initialize from existing population data
+2020-02-16 12:22:22,843 INFO    : Initialize from 0-th generation
+2020-02-16 12:24:18,193 INFO    : *************************
+2020-02-16 12:24:18,196 INFO    : Initialize from existing population data
+2020-02-16 12:24:18,198 INFO    : Initialize from 0-th generation
+2020-02-16 12:26:50,833 INFO    : *************************
+2020-02-16 12:26:50,836 INFO    : Initialize from existing population data
+2020-02-16 12:26:50,838 INFO    : Initialize from 0-th generation
+2020-02-16 12:28:33,169 INFO    : *************************
+2020-02-16 12:28:33,172 INFO    : Initialize from existing population data
+2020-02-16 12:28:33,173 INFO    : Initialize from 0-th generation
+2020-02-16 12:28:48,254 INFO    : EVOLVE[0-gen]-Begin to evaluate the fitness
+2020-02-16 12:28:48,255 INFO    : Begin to generate python files
+2020-02-16 12:31:58,805 INFO    : *************************
+2020-02-16 12:31:58,807 INFO    : Initialize from existing population data
+2020-02-16 12:31:58,809 INFO    : Initialize from 0-th generation
+2020-02-16 12:31:58,821 INFO    : EVOLVE[0-gen]-Begin to evaluate the fitness
+2020-02-16 12:31:58,822 INFO    : Begin to generate python files
+2020-02-16 12:33:15,279 INFO    : *************************
+2020-02-16 12:33:15,282 INFO    : Initialize from existing population data
+2020-02-16 12:33:15,283 INFO    : Initialize from 0-th generation
+2020-02-16 12:33:15,295 INFO    : EVOLVE[0-gen]-Begin to evaluate the fitness
+2020-02-16 12:33:15,297 INFO    : Begin to generate python files
+2020-02-16 12:35:49,446 INFO    : *************************
+2020-02-16 12:35:49,449 INFO    : Initialize from existing population data
+2020-02-16 12:35:49,450 INFO    : Initialize from 0-th generation
+2020-02-16 12:38:52,658 INFO    : *************************
+2020-02-16 12:38:52,661 INFO    : Initialize from existing population data
+2020-02-16 12:38:52,663 INFO    : Initialize from 0-th generation
+2020-02-16 12:40:08,388 INFO    : EVOLVE[0-gen]-Begin to evaluate the fitness
+2020-02-16 12:40:08,392 INFO    : Begin to generate python files
+2020-02-16 12:54:29,242 INFO    : *************************
+2020-02-16 12:54:29,245 INFO    : Initialize from existing population data
+2020-02-16 12:54:29,246 INFO    : Initialize from 0-th generation
+2020-02-16 12:54:29,258 INFO    : EVOLVE[0-gen]-Begin to evaluate the fitness
+2020-02-16 12:54:29,259 INFO    : Begin to generate python files
+2020-02-16 12:59:21,843 INFO    : *************************
+2020-02-16 12:59:21,845 INFO    : Initialize from existing population data
+2020-02-16 12:59:21,846 INFO    : Initialize from 0-th generation
+2020-02-16 12:59:21,859 INFO    : EVOLVE[0-gen]-Begin to evaluate the fitness
+2020-02-16 12:59:21,860 INFO    : Begin to generate python files
+2020-02-16 12:59:21,864 INFO    : Finish the generation of python files
+2020-02-16 12:59:21,865 INFO    : Query fitness from cache
+2020-02-16 13:07:27,232 INFO    : *************************
+2020-02-16 13:07:27,236 INFO    : Initialize from existing population data
+2020-02-16 13:07:27,238 INFO    : Initialize from 0-th generation
+2020-02-16 13:07:27,256 INFO    : EVOLVE[0-gen]-Begin to evaluate the fitness
+2020-02-16 13:07:27,257 INFO    : Begin to generate python files
+2020-02-16 13:07:27,261 INFO    : Finish the generation of python files
+2020-02-16 13:07:27,263 INFO    : Query fitness from cache
+2020-02-16 13:07:27,372 INFO    : Total hit 0 individuals for fitness
+2020-02-16 14:23:18,642 INFO    : *************************
+2020-02-16 14:23:18,647 INFO    : Initialize from existing population data
+2020-02-16 14:23:18,656 INFO    : Initialize from 0-th generation
+2020-02-16 14:30:43,557 INFO    : *************************
+2020-02-16 14:30:43,560 INFO    : Initialize from existing population data
+2020-02-16 14:30:43,562 INFO    : Initialize from 0-th generation
+2020-02-16 14:30:48,513 INFO    : EVOLVE[0-gen]-Begin to evaluate the fitness
+2020-02-16 14:30:48,515 INFO    : Begin to generate python files
+2020-02-16 14:30:48,521 INFO    : Finish the generation of python files
+2020-02-16 14:30:48,522 INFO    : Query fitness from cache
+2020-02-16 14:30:48,526 INFO    : Total hit 0 individuals for fitness
+2020-02-16 14:35:02,440 INFO    : *************************
+2020-02-16 14:35:02,445 INFO    : Initialize from existing population data
+2020-02-16 14:35:02,447 INFO    : Initialize from 0-th generation
+2020-02-16 14:35:02,485 INFO    : EVOLVE[0-gen]-Begin to evaluate the fitness
+2020-02-16 14:35:02,487 INFO    : Begin to generate python files
+2020-02-16 14:35:08,237 INFO    : Finish the generation of python files
+2020-02-16 14:35:08,238 INFO    : Query fitness from cache
+2020-02-16 14:35:08,241 INFO    : Total hit 0 individuals for fitness
+2020-02-16 14:35:23,394 INFO    : *************************
+2020-02-16 14:35:23,399 INFO    : Initialize from existing population data
+2020-02-16 14:35:23,401 INFO    : Initialize from 0-th generation
+2020-02-16 14:35:23,418 INFO    : EVOLVE[0-gen]-Begin to evaluate the fitness
+2020-02-16 14:35:23,419 INFO    : Begin to generate python files
+2020-02-16 14:37:38,204 INFO    : *************************
+2020-02-16 14:37:38,207 INFO    : Initialize...
+2020-02-16 14:39:05,851 INFO    : *************************
+2020-02-16 14:39:05,853 INFO    : Initialize...
+2020-02-16 14:39:35,125 INFO    : *************************
+2020-02-16 14:39:35,129 INFO    : Initialize...
+2020-02-16 14:43:46,903 INFO    : *************************
+2020-02-16 14:43:56,618 INFO    : Initialize from existing population data
+2020-02-16 14:43:56,620 INFO    : Initialize from 0-th generation
+2020-02-16 14:43:56,642 INFO    : EVOLVE[0-gen]-Begin to evaluate the fitness
+2020-02-16 14:43:56,644 INFO    : Begin to generate python files
+2020-02-16 14:43:59,220 INFO    : Finish the generation of python files
+2020-02-16 14:43:59,221 INFO    : Query fitness from cache
+2020-02-16 14:43:59,225 INFO    : Total hit 0 individuals for fitness
+2020-02-16 14:58:24,454 INFO    : *************************
+2020-02-16 14:58:24,457 INFO    : Initialize...
+2020-02-16 15:11:40,974 INFO    : *************************
+2020-02-16 15:11:40,978 INFO    : Initialize...
+2020-02-16 15:23:55,231 INFO    : *************************
+2020-02-16 15:23:55,235 INFO    : Initialize...
+2020-02-16 15:39:20,544 INFO    : *************************
+2020-02-16 15:39:20,547 INFO    : Initialize...
+2020-02-16 15:39:53,533 INFO    : *************************
+2020-02-16 15:39:53,538 INFO    : Initialize...
+2020-02-16 15:45:23,219 INFO    : *************************
+2020-02-16 15:45:23,222 INFO    : Initialize...
+2020-02-16 16:01:25,029 INFO    : *************************
+2020-02-16 16:01:25,033 INFO    : Initialize...
+2020-02-16 16:28:19,213 INFO    : *************************
+2020-02-16 16:28:19,221 INFO    : Initialize...
+2020-02-16 16:33:59,651 INFO    : *************************
+2020-02-16 16:33:59,655 INFO    : Initialize...
+2020-02-16 16:33:59,660 INFO    : EVOLVE[0-gen]-Begin to evaluate the fitness
+2020-02-16 16:33:59,662 INFO    : Begin to generate python files
+2020-02-16 16:34:07,801 INFO    : Finish the generation of python files
+2020-02-16 16:34:07,803 INFO    : Query fitness from cache
+2020-02-16 16:34:07,808 INFO    : Total hit 0 individuals for fitness

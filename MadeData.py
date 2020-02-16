@@ -28,7 +28,7 @@ class MadeData:
         # torchvision.datasets.CIFAR10( )也是封装好了的，就在我前面提到的torchvision.datasets
         # 模块中,不必深究，如果想深究就看我这段代码后面贴的图1，其实就是在下载数据
         #（不翻墙可能会慢一点吧）然后进行变换，可以看到transform就是我们上面定义的transform
-        trainset = torchvision.datasets.CIFAR10(root='./dataset',
+        trainset = torchvision.datasets.CIFAR10(root='D:\\MINE_FILE\\dataSet\\torch_dataset',
                                                 train=True,
                                                 download=False,
                                                 transform=transform)
@@ -41,7 +41,7 @@ class MadeData:
                                                        shuffle=True,
                                                        num_workers=2)
         # 对于测试集的操作和训练集一样，我就不赘述了
-        testset = torchvision.datasets.CIFAR10(root='./dataset',
+        testset = torchvision.datasets.CIFAR10(root='D:\\MINE_FILE\\dataSet\\torch_dataset',
                                                train=False,
                                                download=False,
                                                transform=transform)

@@ -6,12 +6,14 @@ import torch.nn as nn
 import torch.nn.functional as F
 import torch.backends.cudnn as cudnn
 import torch.optim as optim
-import data_loader
+# import data_loader
 import os
 from datetime import datetime
 import multiprocessing
 from utils import StatusUpdateTool
 from thop import profile
+
+from MadeData import MadeData
 
 
 class EvoCNNModel(nn.Module):
@@ -29,7 +31,7 @@ class TrainModel(object):
         '''
         需传入: 学习率、data
         '''
-        trainloader, validate_loader = data_loader.get_train_valid_loader('/home/yanan/train_data', batch_size=128, augment=True, valid_size=0.1, shuffle=True, random_seed=2312390, show_sample=False, num_workers=1, pin_memory=True)
+        # trainloader, validate_loader = data_loader.get_train_valid_loader('/home/yanan/train_data', batch_size=128, augment=True, valid_size=0.1, shuffle=True, random_seed=2312390, show_sample=False, num_workers=1, pin_memory=True)
         #testloader = data_loader.get_test_loader('/home/yanan/train_data', batch_size=128, shuffle=False, num_workers=1, pin_memory=True)
         net = EvoCNNModel()
         cudnn.benchmark = True
@@ -40,8 +42,8 @@ class TrainModel(object):
         self.net = net
         self.criterion = criterion
         self.best_acc = best_acc
-        self.trainloader = trainloader
-        self.validate_loader = validate_loader
+        # self.trainloader = trainloader
+        # self.validate_loader = validate_loader
         self.file_id = os.path.basename(__file__).split('.')[0]
         #self.testloader = testloader
         #self.log_record(net, first_time=True)
