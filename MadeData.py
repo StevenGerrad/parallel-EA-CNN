@@ -39,16 +39,18 @@ class MadeData:
         self.trainloader = torch.utils.data.DataLoader(trainset,
                                                        batch_size=self.BATCH_SIZE,
                                                        shuffle=True,
-                                                       num_workers=2)
+                                                       num_workers=0)
         # 对于测试集的操作和训练集一样，我就不赘述了
         testset = torchvision.datasets.CIFAR10(root='D:\\MINE_FILE\\dataSet\\torch_dataset',
                                                train=False,
                                                download=False,
                                                transform=transform)
+        # num_workers每次提取数据多进进程为2
         self.testloader = torch.utils.data.DataLoader(testset,
                                                       batch_size=2000,
                                                       shuffle=False,
-                                                      num_workers=2)
+                                                      num_workers=0)
+        
         # 设置DNA的size
         # DNA.input_size_height = 32
         # DNA.input_size_width = 32
@@ -60,4 +62,5 @@ class MadeData:
         return self.trainloader, self.testloader
 
     def getData(self):
+        self.CIFR10()
         return self.trainloader, self.testloader

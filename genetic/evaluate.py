@@ -41,46 +41,57 @@ class FitnessEvaluate(object):
         self.log.info('Total hit %d individuals for fitness' % (_count))
 
         # 查找是否有未训练完成的模型
+        # p_l = []
+
         has_evaluated_offspring = False
         for indi in self.individuals:
             if indi.acc < 0:
-                #                 has_evaluated_offspring = True
-                #                 file_name = indi.id
-                #                 self.log.info('Begin to train %s'%(file_name))
-                #                 _module = importlib.import_module('.', 'scripts.%s'%(file_name))
-                #                 _class = getattr(_module, 'RunModel')
-                #                 cls_obj = _class()
-                #                 cls_obj.do_work('1', file_name)
                 has_evaluated_offspring = True
                 time.sleep(60)
-                gpu_id = GPUTools.detect_availabel_gpu_id()
-                while gpu_id is None:
-                    time.sleep(300)
-                    gpu_id = GPUTools.detect_availabel_gpu_id()
+
+                #############################################################################################
+                # template change BELOW
+                #############################################################################################
+
+                # TODO:
+                # cpu_id 得是一个数字
+                cpu_id = 0
+                file_name = indi.id
+                module_name = 'scripts.%s' % (file_name)
+                if module_name in sys.modules.keys():
+                    self.log.info('Module:%s has been loaded, delete it' % (module_name))
+                    del sys.modules[module_name]
+                    # import_module: 根据字符串导入模块
+                    # _module = importlib.import_module('..', module_name)
+                    # _module = importlib.import_module('..', module_name)
+                    _module = importlib.import_module(module_name)
+                else:
+                    # _module = importlib.import_module('..', module_name)
+                    _module = importlib.import_module(module_name)
                 
-                if gpu_id is not None:
-                    file_name = indi.id
-                    self.log.info('Begin to train %s' % (file_name))
-                    module_name = 'scripts.%s' % (file_name)
-                    if module_name in sys.modules.keys():
-                        self.log.info('Module:%s has been loaded, delete it' % (module_name))
-                        del sys.modules[module_name]
-                        _module = importlib.import_module('.', module_name)
-                    else:
-                        _module = importlib.import_module('.', module_name)
-                    _class = getattr(_module, 'RunModel')
-                    cls_obj = _class()
-                    p = Process(target=cls_obj.do_work, args=(
-                        '%d' % (gpu_id),
-                        file_name,
-                    ))
-                    p.start()
+                # getattr() 函数用于返回一个对象属性值
+                # _class = getattr(_module, 'TrainModel')
+                _class = getattr(_module, 'RunModel')
+                cls_obj = _class()
+                p = Process(target=cls_obj.do_work, args=('%d' % (cpu_id), file_name, indi.learning_rate, ))
+                
+                # p_l.append(p)
+                p.start()
+                # TODO: 内存不太够用
+                # p.join()
+
+                #############################################################################################
+                # template change UP
+                #############################################################################################
+                
             else:
                 file_name = indi.id
                 self.log.info('%s has inherited the fitness as %.5f, no need to evaluate' %
                               (file_name, indi.acc))
                 # f = open('./populations/after_%s.json' % (file_name[4:6]), 'a+')
                 # f.write('%s=%.5f\n' % (file_name, indi.acc))
+                
+
                 f = open('./populations/after_%s.json' % (file_name[4:6]), 'r')
                 info = json.load(f)
 
@@ -93,19 +104,39 @@ class FitnessEvaluate(object):
                 with open('./populations/after_%s.json' % (file_name[4:6]), 'w') as json_file:
                     json_file.write(json_str)
                 
-                # f.flush()
-                # f.close()
+                f.flush()
+                f.close()
         """
         once the last individual has been pushed into the gpu, the code above will finish.
         so, a while-loop need to be insert here to check whether all GPU are available.
         Only all available are available, we can call "the evaluation for all individuals
         in this generation" has been finished.
         """
+        
         if has_evaluated_offspring:
             all_finished = False
             while all_finished is not True:
+                # 推迟执行的秒数。
                 time.sleep(300)
-                all_finished = GPUTools.all_gpu_available()
+                # all_finished = GPUTools.all_gpu_available()
+                f = open('./populations/after_%s.json' % (file_name[4:6]), 'r')
+                info = json.load(f)
+                f.flush()
+                f.close()
+
+                # TODO: 查看当前个体是否都训练完成
+                t_cache = set()
+                for i in info["cache"]:
+                    t_cache.add(i["file_name"])
+                all_finished = True
+                for i in self.individuals:
+                    if i.id not in t_cache:
+                        all_finished = False
+                        break
+        
+        # TODO: 进程似乎不会主动消亡
+        # for p in p_l: p.join()
+
         """
         the reason that using "has_evaluated_offspring" is that:
         If all individuals are evaluated, there is no needed to wait for 300 seconds indicated in line#47
@@ -114,8 +145,10 @@ class FitnessEvaluate(object):
         When the codes run to here, it means all the individuals in this generation have been evaluated, then to save to the list with the key and value
         Before doing so, individuals that have been evaluated in this run should retrieval their fitness first.
         """
+
         if has_evaluated_offspring:
             file_name = './populations/after_%s.json' % (self.individuals[0].id[4:6])
+            # TODO: after_文件是什么时候创建的?
             assert os.path.exists(file_name) == True
             f = open(file_name, 'r')
             
@@ -126,7 +159,9 @@ class FitnessEvaluate(object):
             #         fitness_map[line[0]] = float(line[1])
             # f.close()
             info = json.load(f)
-            fitness_map = info["populations"]
+            fitness_map = {}
+            for i in info["cache"]:
+                fitness_map[i["file_name"]] = float(i["accuracy"])
 
             for indi in self.individuals:
                 if indi.acc == -1:
@@ -134,7 +169,7 @@ class FitnessEvaluate(object):
                         self.log.warn(
                             'The individuals have been evaluated, but the records are not correct, the fitness of %s does not exist in %s, wait 120 seconds'
                             % (indi.id, file_name))
-                        sleep(120)  #
+                        sleep(120)
                     indi.acc = fitness_map[indi.id]
         else:
             self.log.info('None offspring has been evaluated')

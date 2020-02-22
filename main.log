@@ -141,3 +141,843 @@
 2020-02-16 16:34:07,801 INFO    : Finish the generation of python files
 2020-02-16 16:34:07,803 INFO    : Query fitness from cache
 2020-02-16 16:34:07,808 INFO    : Total hit 0 individuals for fitness
+2020-02-17 09:44:42,136 INFO    : *************************
+2020-02-17 09:44:42,161 INFO    : Initialize...
+2020-02-17 09:44:42,169 INFO    : EVOLVE[0-gen]-Begin to evaluate the fitness
+2020-02-17 09:44:42,185 INFO    : Begin to generate python files
+2020-02-17 09:44:42,203 INFO    : Finish the generation of python files
+2020-02-17 09:44:42,210 INFO    : Query fitness from cache
+2020-02-17 09:44:42,259 INFO    : Total hit 0 individuals for fitness
+2020-02-20 14:18:29,886 INFO    : *************************
+2020-02-20 14:18:29,908 INFO    : Initialize...
+2020-02-20 14:18:29,912 INFO    : EVOLVE[0-gen]-Begin to evaluate the fitness
+2020-02-20 14:18:29,913 INFO    : Begin to generate python files
+2020-02-20 14:18:29,954 INFO    : Finish the generation of python files
+2020-02-20 14:18:29,955 INFO    : Query fitness from cache
+2020-02-20 14:18:30,002 INFO    : Total hit 0 individuals for fitness
+2020-02-20 19:43:39,532 INFO    : *************************
+2020-02-20 19:43:39,535 INFO    : Initialize...
+2020-02-20 19:43:39,539 INFO    : EVOLVE[0-gen]-Begin to evaluate the fitness
+2020-02-20 19:43:39,540 INFO    : Begin to generate python files
+2020-02-20 19:43:39,547 INFO    : Finish the generation of python files
+2020-02-20 19:43:39,548 INFO    : Query fitness from cache
+2020-02-20 19:43:39,550 INFO    : Total hit 0 individuals for fitness
+2020-02-20 19:53:31,174 INFO    : *************************
+2020-02-20 19:53:31,177 INFO    : Initialize...
+2020-02-20 19:53:31,182 INFO    : EVOLVE[0-gen]-Begin to evaluate the fitness
+2020-02-20 19:53:31,183 INFO    : Begin to generate python files
+2020-02-20 19:53:31,190 INFO    : Finish the generation of python files
+2020-02-20 19:53:31,191 INFO    : Query fitness from cache
+2020-02-20 19:53:31,192 INFO    : Total hit 0 individuals for fitness
+2020-02-20 20:56:04,203 INFO    : *************************
+2020-02-20 20:56:04,206 INFO    : Initialize...
+2020-02-20 20:56:04,211 INFO    : EVOLVE[0-gen]-Begin to evaluate the fitness
+2020-02-20 20:56:04,212 INFO    : Begin to generate python files
+2020-02-20 20:56:04,218 INFO    : Finish the generation of python files
+2020-02-20 20:56:04,219 INFO    : Query fitness from cache
+2020-02-20 20:56:04,220 INFO    : Total hit 0 individuals for fitness
+2020-02-20 21:30:58,196 INFO    : *************************
+2020-02-20 21:30:58,200 INFO    : Initialize...
+2020-02-20 21:30:58,209 INFO    : EVOLVE[0-gen]-Begin to evaluate the fitness
+2020-02-20 21:30:58,211 INFO    : Begin to generate python files
+2020-02-20 21:30:58,223 INFO    : Finish the generation of python files
+2020-02-20 21:30:58,225 INFO    : Query fitness from cache
+2020-02-20 21:30:58,228 INFO    : Total hit 0 individuals for fitness
+2020-02-20 21:37:59,414 INFO    : *************************
+2020-02-20 21:37:59,417 INFO    : Initialize...
+2020-02-20 21:37:59,421 INFO    : EVOLVE[0-gen]-Begin to evaluate the fitness
+2020-02-20 21:37:59,422 INFO    : Begin to generate python files
+2020-02-20 21:37:59,428 INFO    : Finish the generation of python files
+2020-02-20 21:37:59,429 INFO    : Query fitness from cache
+2020-02-20 21:37:59,431 INFO    : Total hit 0 individuals for fitness
+2020-02-21 00:07:54,085 INFO    : *************************
+2020-02-21 00:07:54,089 INFO    : Initialize...
+2020-02-21 00:07:54,097 INFO    : EVOLVE[0-gen]-Begin to evaluate the fitness
+2020-02-21 00:07:54,100 INFO    : Begin to generate python files
+2020-02-21 00:07:54,115 INFO    : Finish the generation of python files
+2020-02-21 00:07:54,117 INFO    : Query fitness from cache
+2020-02-21 00:07:54,124 INFO    : Total hit 0 individuals for fitness
+2020-02-21 10:09:34,888 INFO    : *************************
+2020-02-21 10:09:34,891 INFO    : Initialize...
+2020-02-21 10:09:34,895 INFO    : EVOLVE[0-gen]-Begin to evaluate the fitness
+2020-02-21 10:09:34,897 INFO    : Begin to generate python files
+2020-02-21 10:09:34,907 INFO    : Finish the generation of python files
+2020-02-21 10:09:34,908 INFO    : Query fitness from cache
+2020-02-21 10:09:34,936 INFO    : Total hit 0 individuals for fitness
+2020-02-21 10:24:19,992 INFO    : *************************
+2020-02-21 10:24:19,995 INFO    : Initialize...
+2020-02-21 10:24:20,000 INFO    : EVOLVE[0-gen]-Begin to evaluate the fitness
+2020-02-21 10:24:20,003 INFO    : Begin to generate python files
+2020-02-21 10:24:20,010 INFO    : Finish the generation of python files
+2020-02-21 10:24:20,011 INFO    : Query fitness from cache
+2020-02-21 10:24:20,013 INFO    : Total hit 0 individuals for fitness
+2020-02-21 10:26:30,092 INFO    : *************************
+2020-02-21 10:26:30,095 INFO    : Initialize...
+2020-02-21 10:26:30,099 INFO    : EVOLVE[0-gen]-Begin to evaluate the fitness
+2020-02-21 10:26:30,100 INFO    : Begin to generate python files
+2020-02-21 10:26:30,105 INFO    : Finish the generation of python files
+2020-02-21 10:26:30,106 INFO    : Query fitness from cache
+2020-02-21 10:26:30,108 INFO    : Total hit 0 individuals for fitness
+2020-02-21 10:28:16,642 INFO    : *************************
+2020-02-21 10:28:16,644 INFO    : Initialize...
+2020-02-21 10:28:16,648 INFO    : EVOLVE[0-gen]-Begin to evaluate the fitness
+2020-02-21 10:28:16,649 INFO    : Begin to generate python files
+2020-02-21 10:28:16,659 INFO    : Finish the generation of python files
+2020-02-21 10:28:16,660 INFO    : Query fitness from cache
+2020-02-21 10:28:16,665 INFO    : Total hit 0 individuals for fitness
+2020-02-21 10:28:30,721 INFO    : *************************
+2020-02-21 10:28:30,725 INFO    : Initialize...
+2020-02-21 10:28:30,731 INFO    : EVOLVE[0-gen]-Begin to evaluate the fitness
+2020-02-21 10:28:30,732 INFO    : Begin to generate python files
+2020-02-21 10:28:30,744 INFO    : Finish the generation of python files
+2020-02-21 10:28:30,745 INFO    : Query fitness from cache
+2020-02-21 10:28:30,748 INFO    : Total hit 0 individuals for fitness
+2020-02-21 10:32:17,064 INFO    : *************************
+2020-02-21 10:32:17,067 INFO    : Initialize...
+2020-02-21 10:32:17,071 INFO    : EVOLVE[0-gen]-Begin to evaluate the fitness
+2020-02-21 10:32:17,072 INFO    : Begin to generate python files
+2020-02-21 10:32:17,078 INFO    : Finish the generation of python files
+2020-02-21 10:32:17,079 INFO    : Query fitness from cache
+2020-02-21 10:32:17,081 INFO    : Total hit 0 individuals for fitness
+2020-02-21 10:33:46,972 INFO    : *************************
+2020-02-21 10:33:46,978 INFO    : Initialize...
+2020-02-21 10:33:46,986 INFO    : EVOLVE[0-gen]-Begin to evaluate the fitness
+2020-02-21 10:33:46,988 INFO    : Begin to generate python files
+2020-02-21 10:33:47,003 INFO    : Finish the generation of python files
+2020-02-21 10:33:47,005 INFO    : Query fitness from cache
+2020-02-21 10:33:47,009 INFO    : Total hit 0 individuals for fitness
+2020-02-21 11:23:57,099 INFO    : *************************
+2020-02-21 11:23:57,102 INFO    : Initialize...
+2020-02-21 11:23:57,108 INFO    : EVOLVE[0-gen]-Begin to evaluate the fitness
+2020-02-21 11:23:57,110 INFO    : Begin to generate python files
+2020-02-21 11:23:57,117 INFO    : Finish the generation of python files
+2020-02-21 11:23:57,119 INFO    : Query fitness from cache
+2020-02-21 11:23:57,121 INFO    : Total hit 0 individuals for fitness
+2020-02-21 11:30:40,797 INFO    : *************************
+2020-02-21 11:30:40,805 INFO    : Initialize...
+2020-02-21 11:30:40,816 INFO    : EVOLVE[0-gen]-Begin to evaluate the fitness
+2020-02-21 11:30:40,818 INFO    : Begin to generate python files
+2020-02-21 11:30:40,838 INFO    : Finish the generation of python files
+2020-02-21 11:30:40,845 INFO    : Query fitness from cache
+2020-02-21 11:30:40,850 INFO    : Total hit 0 individuals for fitness
+2020-02-21 12:03:40,957 INFO    : *************************
+2020-02-21 12:03:40,961 INFO    : Initialize...
+2020-02-21 12:03:40,971 INFO    : EVOLVE[0-gen]-Begin to evaluate the fitness
+2020-02-21 12:03:40,973 INFO    : Begin to generate python files
+2020-02-21 12:03:40,985 INFO    : Finish the generation of python files
+2020-02-21 12:03:40,987 INFO    : Query fitness from cache
+2020-02-21 12:03:40,992 INFO    : Total hit 0 individuals for fitness
+2020-02-21 13:05:00,577 INFO    : *************************
+2020-02-21 13:05:00,581 INFO    : Initialize...
+2020-02-21 13:05:00,586 INFO    : EVOLVE[0-gen]-Begin to evaluate the fitness
+2020-02-21 13:05:00,587 INFO    : Begin to generate python files
+2020-02-21 13:05:00,597 INFO    : Finish the generation of python files
+2020-02-21 13:05:00,598 INFO    : Query fitness from cache
+2020-02-21 13:05:00,601 INFO    : Total hit 0 individuals for fitness
+2020-02-21 14:58:12,139 INFO    : *************************
+2020-02-21 14:58:12,167 INFO    : Initialize...
+2020-02-21 14:58:12,171 INFO    : EVOLVE[0-gen]-Begin to evaluate the fitness
+2020-02-21 14:58:12,172 INFO    : Begin to generate python files
+2020-02-21 14:58:12,196 INFO    : Finish the generation of python files
+2020-02-21 14:58:12,198 INFO    : Query fitness from cache
+2020-02-21 14:58:12,248 INFO    : Total hit 0 individuals for fitness
+2020-02-21 15:02:47,414 INFO    : *************************
+2020-02-21 15:02:47,417 INFO    : Initialize...
+2020-02-21 15:02:47,423 INFO    : EVOLVE[0-gen]-Begin to evaluate the fitness
+2020-02-21 15:02:47,424 INFO    : Begin to generate python files
+2020-02-21 15:02:47,435 INFO    : Finish the generation of python files
+2020-02-21 15:02:47,436 INFO    : Query fitness from cache
+2020-02-21 15:02:47,438 INFO    : Total hit 0 individuals for fitness
+2020-02-21 15:18:47,449 INFO    : *************************
+2020-02-21 15:18:47,452 INFO    : Initialize...
+2020-02-21 15:18:47,457 INFO    : EVOLVE[0-gen]-Begin to evaluate the fitness
+2020-02-21 15:18:47,458 INFO    : Begin to generate python files
+2020-02-21 15:18:47,465 INFO    : Finish the generation of python files
+2020-02-21 15:18:47,466 INFO    : Query fitness from cache
+2020-02-21 15:18:47,470 INFO    : Total hit 0 individuals for fitness
+2020-02-21 15:25:27,229 INFO    : *************************
+2020-02-21 15:25:27,233 INFO    : Initialize...
+2020-02-21 15:25:27,239 INFO    : EVOLVE[0-gen]-Begin to evaluate the fitness
+2020-02-21 15:25:27,240 INFO    : Begin to generate python files
+2020-02-21 15:25:27,250 INFO    : Finish the generation of python files
+2020-02-21 15:25:27,251 INFO    : Query fitness from cache
+2020-02-21 15:25:27,254 INFO    : Total hit 0 individuals for fitness
+2020-02-21 16:03:53,211 INFO    : *************************
+2020-02-21 16:03:53,215 INFO    : Initialize...
+2020-02-21 16:03:53,221 INFO    : EVOLVE[0-gen]-Begin to evaluate the fitness
+2020-02-21 16:03:53,224 INFO    : Begin to generate python files
+2020-02-21 16:03:53,235 INFO    : Finish the generation of python files
+2020-02-21 16:03:53,253 INFO    : Query fitness from cache
+2020-02-21 16:03:53,257 INFO    : Total hit 0 individuals for fitness
+2020-02-21 16:22:09,545 INFO    : *************************
+2020-02-21 16:22:09,551 INFO    : Initialize...
+2020-02-21 16:22:09,560 INFO    : EVOLVE[0-gen]-Begin to evaluate the fitness
+2020-02-21 16:22:09,564 INFO    : Begin to generate python files
+2020-02-21 16:22:09,578 INFO    : Finish the generation of python files
+2020-02-21 16:22:09,581 INFO    : Query fitness from cache
+2020-02-21 16:22:09,582 INFO    : Total hit 0 individuals for fitness
+2020-02-21 16:26:31,329 INFO    : *************************
+2020-02-21 16:26:31,332 INFO    : Initialize...
+2020-02-21 16:26:31,339 INFO    : EVOLVE[0-gen]-Begin to evaluate the fitness
+2020-02-21 16:26:31,340 INFO    : Begin to generate python files
+2020-02-21 16:26:31,348 INFO    : Finish the generation of python files
+2020-02-21 16:26:31,349 INFO    : Query fitness from cache
+2020-02-21 16:26:31,352 INFO    : Total hit 0 individuals for fitness
+2020-02-21 20:15:46,920 INFO    : *************************
+2020-02-21 20:15:46,939 INFO    : Initialize...
+2020-02-21 20:15:46,945 INFO    : EVOLVE[0-gen]-Begin to evaluate the fitness
+2020-02-21 20:15:46,947 INFO    : Begin to generate python files
+2020-02-21 20:15:46,968 INFO    : Finish the generation of python files
+2020-02-21 20:15:46,970 INFO    : Query fitness from cache
+2020-02-21 20:15:46,973 INFO    : Total hit 0 individuals for fitness
+2020-02-21 20:27:42,263 INFO    : *************************
+2020-02-21 20:27:42,286 INFO    : Initialize...
+2020-02-21 20:27:42,296 INFO    : EVOLVE[0-gen]-Begin to evaluate the fitness
+2020-02-21 20:27:42,313 INFO    : Begin to generate python files
+2020-02-21 20:27:42,338 INFO    : Finish the generation of python files
+2020-02-21 20:27:42,347 INFO    : Query fitness from cache
+2020-02-21 20:27:42,360 INFO    : Total hit 0 individuals for fitness
+2020-02-21 20:37:42,957 WARNING : The individuals have been evaluated, but the records are not correct, the fitness of indi0000 does not exist in ./populations/after_00.json, wait 120 seconds
+2020-02-21 20:43:50,744 INFO    : *************************
+2020-02-21 20:43:50,747 INFO    : Initialize...
+2020-02-21 20:43:50,754 INFO    : EVOLVE[0-gen]-Begin to evaluate the fitness
+2020-02-21 20:43:50,755 INFO    : Begin to generate python files
+2020-02-21 20:43:50,761 INFO    : Finish the generation of python files
+2020-02-21 20:43:50,762 INFO    : Query fitness from cache
+2020-02-21 20:43:50,766 INFO    : Total hit 0 individuals for fitness
+2020-02-21 20:51:51,041 INFO    : Add record into cache, id:33da9082c84d15ab1231632d0cff264a85f55bc77de24fdd91c8eb08, acc:0.23120
+2020-02-21 21:00:46,809 INFO    : *************************
+2020-02-21 21:00:46,814 INFO    : Initialize...
+2020-02-21 21:00:46,820 INFO    : EVOLVE[0-gen]-Begin to evaluate the fitness
+2020-02-21 21:00:46,822 INFO    : Begin to generate python files
+2020-02-21 21:00:46,831 INFO    : Finish the generation of python files
+2020-02-21 21:00:46,832 INFO    : Query fitness from cache
+2020-02-21 21:00:46,835 INFO    : Total hit 0 individuals for fitness
+2020-02-21 21:08:47,192 INFO    : Add record into cache, id:33da9082c84d15ab1231632d0cff264a85f55bc77de24fdd91c8eb08, acc:0.23450
+2020-02-21 21:08:47,194 INFO    : Add record into cache, id:33da9082c84d15ab1231632d0cff264a85f55bc77de24fdd91c8eb08, acc:0.22710
+2020-02-21 21:08:47,197 INFO    : Add record into cache, id:33da9082c84d15ab1231632d0cff264a85f55bc77de24fdd91c8eb08, acc:0.22530
+2020-02-21 21:08:47,202 INFO    : EVOLVE[0-gen]-Finish the evaluation
+2020-02-21 21:08:47,203 INFO    : EVOLVE[1-gen]-Begin to crossover and mutation
+2020-02-21 21:08:47,209 INFO    : Alert the learning rate of #indi0000 from 0.086 to 1.713
+2020-02-21 22:04:49,450 INFO    : *************************
+2020-02-21 22:04:49,456 INFO    : Initialize...
+2020-02-21 22:04:49,464 INFO    : EVOLVE[0-gen]-Begin to evaluate the fitness
+2020-02-21 22:04:49,465 INFO    : Begin to generate python files
+2020-02-21 22:04:49,476 INFO    : Finish the generation of python files
+2020-02-21 22:04:49,479 INFO    : Query fitness from cache
+2020-02-21 22:04:49,482 INFO    : Total hit 0 individuals for fitness
+2020-02-21 22:12:49,747 INFO    : Add record into cache, id:33da9082c84d15ab1231632d0cff264a85f55bc77de24fdd91c8eb08, acc:0.22330
+2020-02-21 22:12:49,749 INFO    : Add record into cache, id:33da9082c84d15ab1231632d0cff264a85f55bc77de24fdd91c8eb08, acc:0.23680
+2020-02-21 22:12:49,752 INFO    : Add record into cache, id:33da9082c84d15ab1231632d0cff264a85f55bc77de24fdd91c8eb08, acc:0.22950
+2020-02-21 22:12:49,754 INFO    : EVOLVE[0-gen]-Finish the evaluation
+2020-02-21 22:12:49,756 INFO    : EVOLVE[1-gen]-Begin to crossover and mutation
+2020-02-21 22:12:49,763 INFO    : Alert the learning rate of #indi0000 from 0.094 to 1.876
+2020-02-21 22:12:49,767 INFO    : Add edge of identity for #indi0000 from vertex #0 to #2
+2020-02-21 22:12:49,768 INFO    : Alert the learning rate of #indi0000 from 0.177 to 1.885
+2020-02-21 22:12:49,772 INFO    : Alert the learning rate of #indi0001 from 0.065 to 1.292
+2020-02-21 22:12:49,774 INFO    : Alert the learning rate of #indi0001 from 0.085 to 1.309
+2020-02-21 22:12:49,779 INFO    : Add edge of identity for #indi0001 from vertex #0 to #2
+2020-02-21 22:12:49,781 INFO    : Alert the learning rate of #indi0001 from 0.102 to 1.201
+2020-02-21 22:12:49,786 INFO    : Add Vertex for #indi0001 after vertex#2 as bn_relu with conv edge
+2020-02-21 22:12:49,788 INFO    : Remove edge of identity for #indi0001 which is from vertex#0 to #3
+2020-02-21 22:12:49,793 INFO    : Alert the learning rate of #indi0002 from 0.078 to 1.557
+2020-02-21 22:12:49,795 INFO    : Alert the learning rate of #indi0002 from 0.093 to 1.199
+2020-02-21 22:12:49,797 INFO    : Alert the learning rate of #indi0002 from 0.047 to 0.507
+2020-02-21 22:12:49,807 INFO    : Add edge of identity for #indi0002 from vertex #0 to #2
+2020-02-21 22:12:49,811 INFO    : Alert the learning rate of #indi0002 from 0.033 to 0.695
+2020-02-21 22:12:49,818 INFO    : Add Vertex for #indi0002 after vertex#1 as bn_relu with conv edge
+2020-02-21 22:12:49,846 INFO    : EVOLVE[1-gen]-Finish crossover and mutation
+2020-02-21 22:12:49,848 INFO    : EVOLVE[1-gen]-Begin to evaluate the fitness
+2020-02-21 22:12:49,849 INFO    : Begin to generate python files
+2020-02-21 22:36:47,890 INFO    : *************************
+2020-02-21 22:36:47,893 INFO    : Initialize...
+2020-02-21 22:36:47,899 INFO    : EVOLVE[0-gen]-Begin to evaluate the fitness
+2020-02-21 22:36:47,901 INFO    : Begin to generate python files
+2020-02-21 22:36:47,909 INFO    : Finish the generation of python files
+2020-02-21 22:36:47,911 INFO    : Query fitness from cache
+2020-02-21 22:36:47,914 INFO    : Total hit 0 individuals for fitness
+2020-02-21 22:44:48,153 INFO    : Add record into cache, id:33da9082c84d15ab1231632d0cff264a85f55bc77de24fdd91c8eb08, acc:0.23080
+2020-02-21 22:44:48,156 INFO    : Add record into cache, id:33da9082c84d15ab1231632d0cff264a85f55bc77de24fdd91c8eb08, acc:0.22790
+2020-02-21 22:44:48,159 INFO    : Add record into cache, id:33da9082c84d15ab1231632d0cff264a85f55bc77de24fdd91c8eb08, acc:0.23650
+2020-02-21 22:44:48,161 INFO    : EVOLVE[0-gen]-Finish the evaluation
+2020-02-21 22:44:48,163 INFO    : EVOLVE[1-gen]-Begin to crossover and mutation
+2020-02-21 22:44:48,168 INFO    : Add edge of identity for #indi0000 from vertex #0 to #2
+2020-02-21 22:44:48,169 INFO    : Alert the learning rate of #indi0000 from 0.064 to 1.279
+2020-02-21 22:44:48,174 INFO    : Alert the learning rate of #indi0001 from 0.088 to 1.751
+2020-02-21 22:44:48,175 INFO    : Alert the learning rate of #indi0001 from 0.133 to 1.518
+2020-02-21 22:44:48,178 INFO    : Alert the learning rate of #indi0001 from 0.113 to 0.850
+2020-02-21 22:44:48,184 INFO    : Add Vertex for #indi0001 after vertex#2 as bn_relu with conv edge
+2020-02-21 22:44:48,188 INFO    : Alert the learning rate of #indi0002 from 0.065 to 1.299
+2020-02-21 22:44:48,190 INFO    : Alert the learning rate of #indi0002 from 0.053 to 0.819
+2020-02-21 22:44:48,191 INFO    : Alert the learning rate of #indi0002 from 0.030 to 0.558
+2020-02-21 22:44:48,203 INFO    : EVOLVE[1-gen]-Finish crossover and mutation
+2020-02-21 22:44:48,204 INFO    : EVOLVE[1-gen]-Begin to evaluate the fitness
+2020-02-21 22:44:48,205 INFO    : Begin to generate python files
+2020-02-21 22:44:48,213 INFO    : Finish the generation of python files
+2020-02-21 22:44:48,214 INFO    : Query fitness from cache
+2020-02-22 09:19:31,366 INFO    : *************************
+2020-02-22 09:19:31,369 INFO    : Initialize...
+2020-02-22 09:19:31,373 INFO    : EVOLVE[0-gen]-Begin to evaluate the fitness
+2020-02-22 09:19:31,374 INFO    : Begin to generate python files
+2020-02-22 09:19:31,379 INFO    : Finish the generation of python files
+2020-02-22 09:19:31,380 INFO    : Query fitness from cache
+2020-02-22 09:19:31,417 INFO    : Total hit 0 individuals for fitness
+2020-02-22 09:27:33,577 INFO    : Add record into cache, id:33da9082c84d15ab1231632d0cff264a85f55bc77de24fdd91c8eb08, acc:0.22750
+2020-02-22 09:27:33,579 INFO    : Add record into cache, id:33da9082c84d15ab1231632d0cff264a85f55bc77de24fdd91c8eb08, acc:0.22630
+2020-02-22 09:27:33,582 INFO    : Add record into cache, id:33da9082c84d15ab1231632d0cff264a85f55bc77de24fdd91c8eb08, acc:0.23570
+2020-02-22 09:27:33,584 INFO    : EVOLVE[0-gen]-Finish the evaluation
+2020-02-22 09:27:33,585 INFO    : EVOLVE[1-gen]-Begin to crossover and mutation
+2020-02-22 09:27:33,588 INFO    : Alert the learning rate of #indi0000 from 0.056 to 1.128
+2020-02-22 09:27:33,591 INFO    : Add edge of identity for #indi0000 from vertex #0 to #2
+2020-02-22 09:27:33,592 INFO    : Alert the learning rate of #indi0000 from 0.037 to 0.654
+2020-02-22 09:27:33,593 INFO    : Remove edge of conv for #indi0000 which is from vertex#0 to #2
+2020-02-22 09:27:33,596 INFO    : Alert the learning rate of #indi0001 from 0.042 to 0.842
+2020-02-22 09:27:33,597 INFO    : Alert the learning rate of #indi0001 from 0.027 to 0.642
+2020-02-22 09:27:33,601 INFO    : Add Vertex for #indi0001 after vertex#1 as bn_relu with conv edge
+2020-02-22 09:27:33,604 INFO    : Alert the learning rate of #indi0002 from 0.045 to 0.893
+2020-02-22 09:27:33,620 INFO    : EVOLVE[1-gen]-Finish crossover and mutation
+2020-02-22 09:27:33,624 INFO    : EVOLVE[1-gen]-Begin to evaluate the fitness
+2020-02-22 09:27:33,627 INFO    : Begin to generate python files
+2020-02-22 09:27:33,634 INFO    : Finish the generation of python files
+2020-02-22 09:27:33,636 INFO    : Query fitness from cache
+2020-02-22 09:27:33,638 INFO    : Total hit 0 individuals for fitness
+2020-02-22 09:27:33,639 INFO    : indi0000 has inherited the fitness as 0.22750, no need to evaluate
+2020-02-22 09:27:33,643 INFO    : indi0001 has inherited the fitness as 0.22630, no need to evaluate
+2020-02-22 09:27:33,648 INFO    : indi0002 has inherited the fitness as 0.23570, no need to evaluate
+2020-02-22 09:27:33,651 INFO    : None offspring has been evaluated
+2020-02-22 09:27:33,652 INFO    : Add record into cache, id:33da9082c84d15ab1231632d0cff264a85f55bc77de24fdd91c8eb08, acc:0.22750
+2020-02-22 09:27:33,654 INFO    : Add record into cache, id:3fbab2a1fee8edab989ddea5fae3d9a65591add2da39b8dab5323c32, acc:0.22630
+2020-02-22 09:27:33,657 INFO    : Add record into cache, id:33da9082c84d15ab1231632d0cff264a85f55bc77de24fdd91c8eb08, acc:0.23570
+2020-02-22 09:27:33,662 INFO    : EVOLVE[1-gen]-Finish the evaluation
+2020-02-22 09:36:21,638 INFO    : *************************
+2020-02-22 09:36:21,642 INFO    : Initialize...
+2020-02-22 09:36:21,648 INFO    : EVOLVE[0-gen]-Begin to evaluate the fitness
+2020-02-22 09:36:21,649 INFO    : Begin to generate python files
+2020-02-22 09:36:21,654 INFO    : Finish the generation of python files
+2020-02-22 09:36:21,656 INFO    : Query fitness from cache
+2020-02-22 09:36:21,659 INFO    : Total hit 0 individuals for fitness
+2020-02-22 09:44:21,881 INFO    : Add record into cache, id:33da9082c84d15ab1231632d0cff264a85f55bc77de24fdd91c8eb08, acc:0.22750
+2020-02-22 09:44:21,884 INFO    : Add record into cache, id:33da9082c84d15ab1231632d0cff264a85f55bc77de24fdd91c8eb08, acc:0.22630
+2020-02-22 09:44:21,887 INFO    : Add record into cache, id:33da9082c84d15ab1231632d0cff264a85f55bc77de24fdd91c8eb08, acc:0.23570
+2020-02-22 09:44:21,889 INFO    : EVOLVE[0-gen]-Finish the evaluation
+2020-02-22 09:44:21,890 INFO    : EVOLVE[1-gen]-Begin to crossover and mutation
+2020-02-22 09:44:21,894 INFO    : Alert the learning rate of #indi0000 from 0.087 to 1.739
+2020-02-22 09:44:21,898 INFO    : Alert the learning rate of #indi0001 from 0.026 to 0.512
+2020-02-22 09:44:21,899 INFO    : Alert the learning rate of #indi0001 from 0.025 to 0.978
+2020-02-22 09:44:21,903 INFO    : Add Vertex for #indi0001 after vertex#2 as bn_relu with conv edge
+2020-02-22 09:44:21,907 INFO    : Alert the learning rate of #indi0002 from 0.066 to 1.327
+2020-02-22 09:44:21,908 INFO    : Alert the learning rate of #indi0002 from 0.054 to 0.808
+2020-02-22 09:44:21,909 INFO    : Alert the learning rate of #indi0002 from 0.029 to 0.549
+2020-02-22 09:44:21,914 INFO    : Add Vertex for #indi0002 after vertex#2 as bn_relu with conv edge
+2020-02-22 09:44:21,940 INFO    : EVOLVE[1-gen]-Finish crossover and mutation
+2020-02-22 09:44:21,941 INFO    : EVOLVE[1-gen]-Begin to evaluate the fitness
+2020-02-22 09:44:21,942 INFO    : Begin to generate python files
+2020-02-22 09:44:21,955 INFO    : Finish the generation of python files
+2020-02-22 09:44:21,956 INFO    : Query fitness from cache
+2020-02-22 09:44:21,958 INFO    : Total hit 0 individuals for fitness
+2020-02-22 09:44:21,959 INFO    : indi0000 has inherited the fitness as 0.22750, no need to evaluate
+2020-02-22 09:44:21,962 INFO    : indi0001 has inherited the fitness as 0.22630, no need to evaluate
+2020-02-22 09:44:21,968 INFO    : indi0002 has inherited the fitness as 0.23570, no need to evaluate
+2020-02-22 09:44:21,970 INFO    : None offspring has been evaluated
+2020-02-22 09:44:21,972 INFO    : Add record into cache, id:33da9082c84d15ab1231632d0cff264a85f55bc77de24fdd91c8eb08, acc:0.22750
+2020-02-22 09:44:21,974 INFO    : Add record into cache, id:b7fade361ff0a20dc407b35c69a854321a2771a56ee3861a521b6375, acc:0.22630
+2020-02-22 09:44:21,977 INFO    : Add record into cache, id:b7fade361ff0a20dc407b35c69a854321a2771a56ee3861a521b6375, acc:0.23570
+2020-02-22 09:44:21,983 INFO    : EVOLVE[1-gen]-Finish the evaluation
+2020-02-22 09:45:56,230 INFO    : *************************
+2020-02-22 09:45:56,237 INFO    : Initialize...
+2020-02-22 09:45:56,244 INFO    : EVOLVE[0-gen]-Begin to evaluate the fitness
+2020-02-22 09:45:56,245 INFO    : Begin to generate python files
+2020-02-22 09:45:56,255 INFO    : Finish the generation of python files
+2020-02-22 09:45:56,258 INFO    : Query fitness from cache
+2020-02-22 09:45:56,262 INFO    : Total hit 0 individuals for fitness
+2020-02-22 09:53:56,509 INFO    : Add record into cache, id:33da9082c84d15ab1231632d0cff264a85f55bc77de24fdd91c8eb08, acc:0.22750
+2020-02-22 09:53:56,511 INFO    : Add record into cache, id:33da9082c84d15ab1231632d0cff264a85f55bc77de24fdd91c8eb08, acc:0.22630
+2020-02-22 09:53:56,513 INFO    : Add record into cache, id:33da9082c84d15ab1231632d0cff264a85f55bc77de24fdd91c8eb08, acc:0.23570
+2020-02-22 09:53:56,516 INFO    : EVOLVE[0-gen]-Finish the evaluation
+2020-02-22 09:53:56,518 INFO    : EVOLVE[1-gen]-Begin to crossover and mutation
+2020-02-22 09:53:56,526 INFO    : Alert the learning rate of #indi0000 from 0.091 to 1.815
+2020-02-22 09:53:56,531 INFO    : Add edge of identity for #indi0000 from vertex #0 to #2
+2020-02-22 09:53:56,532 INFO    : Alert the learning rate of #indi0000 from 0.166 to 1.832
+2020-02-22 09:53:56,539 INFO    : Add Vertex for #indi0000 after vertex#1 as bn_relu with conv edge
+2020-02-22 09:53:56,542 INFO    : Remove edge of conv for #indi0000 which is from vertex#0 to #3
+2020-02-22 09:53:56,554 INFO    : Add edge of identity for #indi0001 from vertex #0 to #2
+2020-02-22 09:53:56,556 INFO    : Alert the learning rate of #indi0001 from 0.035 to 0.701
+2020-02-22 09:53:56,561 INFO    : Remove edge of conv for #indi0001 which is from vertex#0 to #2
+2020-02-22 09:53:56,566 INFO    : Alert the learning rate of #indi0002 from 0.045 to 0.897
+2020-02-22 09:53:56,595 INFO    : EVOLVE[1-gen]-Finish crossover and mutation
+2020-02-22 09:53:56,598 INFO    : EVOLVE[1-gen]-Begin to evaluate the fitness
+2020-02-22 09:53:56,600 INFO    : Begin to generate python files
+2020-02-22 09:53:56,611 INFO    : Finish the generation of python files
+2020-02-22 09:53:56,614 INFO    : Query fitness from cache
+2020-02-22 09:53:56,616 INFO    : Total hit 0 individuals for fitness
+2020-02-22 09:53:56,618 INFO    : indi0000 has inherited the fitness as 0.22750, no need to evaluate
+2020-02-22 09:53:56,625 INFO    : indi0001 has inherited the fitness as 0.22630, no need to evaluate
+2020-02-22 09:53:56,628 INFO    : indi0002 has inherited the fitness as 0.23570, no need to evaluate
+2020-02-22 09:53:56,631 INFO    : None offspring has been evaluated
+2020-02-22 09:53:56,634 INFO    : Add record into cache, id:34dd3dc165d16e5cf365385cd1aa1c7ac084ee8ad93aaa05cec8ad6d, acc:0.22750
+2020-02-22 09:53:56,638 INFO    : Add record into cache, id:33da9082c84d15ab1231632d0cff264a85f55bc77de24fdd91c8eb08, acc:0.22630
+2020-02-22 09:53:56,648 INFO    : Add record into cache, id:33da9082c84d15ab1231632d0cff264a85f55bc77de24fdd91c8eb08, acc:0.23570
+2020-02-22 09:53:56,651 INFO    : EVOLVE[1-gen]-Finish the evaluation
+2020-02-22 09:53:56,668 INFO    : EVOLVE[1-gen]-Finish the environment selection
+2020-02-22 09:53:56,670 INFO    : EVOLVE[2-gen]-Begin to crossover and mutation
+2020-02-22 09:53:56,683 INFO    : Add edge of identity for #indi0100 from vertex #1 to #3
+2020-02-22 09:53:56,685 INFO    : Alert the learning rate of #indi0100 from 0.289 to 1.736
+2020-02-22 09:53:56,701 INFO    : Add Vertex for #indi0100 after vertex#3 as bn_relu with conv edge
+2020-02-22 09:53:56,703 INFO    : Remove edge of conv for #indi0100 which is from vertex#1 to #4
+2020-02-22 09:53:56,715 INFO    : Add edge of identity for #indi0101 from vertex #0 to #2
+2020-02-22 09:53:56,716 INFO    : Alert the learning rate of #indi0101 from 0.070 to 1.566
+2020-02-22 09:53:56,718 INFO    : Remove edge of conv for #indi0101 which is from vertex#0 to #2
+2020-02-22 09:53:56,729 INFO    : Add edge of identity for #indi0102 from vertex #0 to #2
+2020-02-22 09:53:56,730 INFO    : Alert the learning rate of #indi0102 from 0.034 to 0.973
+2020-02-22 09:53:56,768 INFO    : EVOLVE[2-gen]-Finish crossover and mutation
+2020-02-22 09:53:56,771 INFO    : EVOLVE[2-gen]-Begin to evaluate the fitness
+2020-02-22 09:53:56,776 INFO    : Begin to generate python files
+2020-02-22 09:53:56,840 INFO    : Finish the generation of python files
+2020-02-22 09:53:56,845 INFO    : Query fitness from cache
+2020-02-22 09:53:56,848 INFO    : Total hit 0 individuals for fitness
+2020-02-22 09:53:56,850 INFO    : indi0100 has inherited the fitness as 0.22750, no need to evaluate
+2020-02-22 09:58:17,342 INFO    : *************************
+2020-02-22 09:58:17,345 INFO    : Initialize...
+2020-02-22 09:58:17,351 INFO    : EVOLVE[0-gen]-Begin to evaluate the fitness
+2020-02-22 09:58:17,353 INFO    : Begin to generate python files
+2020-02-22 09:58:17,361 INFO    : Finish the generation of python files
+2020-02-22 09:58:17,362 INFO    : Query fitness from cache
+2020-02-22 09:58:17,364 INFO    : Total hit 0 individuals for fitness
+2020-02-22 10:06:17,579 INFO    : Add record into cache, id:33da9082c84d15ab1231632d0cff264a85f55bc77de24fdd91c8eb08, acc:0.22750
+2020-02-22 10:06:17,581 INFO    : Add record into cache, id:33da9082c84d15ab1231632d0cff264a85f55bc77de24fdd91c8eb08, acc:0.22630
+2020-02-22 10:06:17,585 INFO    : Add record into cache, id:33da9082c84d15ab1231632d0cff264a85f55bc77de24fdd91c8eb08, acc:0.23570
+2020-02-22 10:06:17,587 INFO    : EVOLVE[0-gen]-Finish the evaluation
+2020-02-22 10:06:17,588 INFO    : EVOLVE[1-gen]-Begin to crossover and mutation
+2020-02-22 10:06:17,591 INFO    : Alert the learning rate of #indi0000 from 0.033 to 0.652
+2020-02-22 10:06:17,595 INFO    : Add edge of identity for #indi0000 from vertex #0 to #2
+2020-02-22 10:06:17,597 INFO    : Alert the learning rate of #indi0000 from 0.020 to 0.628
+2020-02-22 10:06:17,601 INFO    : Alert the learning rate of #indi0001 from 0.080 to 1.598
+2020-02-22 10:06:17,604 INFO    : Add Vertex for #indi0001 after vertex#2 as bn_relu with conv edge
+2020-02-22 10:06:17,613 INFO    : Alert the learning rate of #indi0002 from 0.090 to 1.803
+2020-02-22 10:06:17,614 INFO    : Alert the learning rate of #indi0002 from 0.052 to 0.573
+2020-02-22 10:06:17,618 INFO    : Alert the learning rate of #indi0002 from 0.032 to 0.613
+2020-02-22 10:06:17,621 INFO    : Alert the learning rate of #indi0002 from 0.021 to 0.678
+2020-02-22 10:06:17,624 INFO    : Alert the learning rate of #indi0002 from 0.030 to 1.395
+2020-02-22 10:06:17,627 INFO    : Alert the learning rate of #indi0002 from 0.017 to 0.565
+2020-02-22 10:06:17,635 INFO    : Add edge of identity for #indi0002 from vertex #0 to #2
+2020-02-22 10:06:17,637 INFO    : Alert the learning rate of #indi0002 from 0.009 to 0.556
+2020-02-22 10:06:17,661 INFO    : EVOLVE[1-gen]-Finish crossover and mutation
+2020-02-22 10:06:17,665 INFO    : EVOLVE[1-gen]-Begin to evaluate the fitness
+2020-02-22 10:06:17,667 INFO    : Begin to generate python files
+2020-02-22 10:06:17,674 INFO    : Finish the generation of python files
+2020-02-22 10:06:17,684 INFO    : Query fitness from cache
+2020-02-22 10:06:17,687 INFO    : Total hit 0 individuals for fitness
+2020-02-22 10:07:17,688 INFO    : Module:scripts.indi0000 has been loaded, delete it
+2020-02-22 10:08:17,701 INFO    : Module:scripts.indi0001 has been loaded, delete it
+2020-02-22 10:09:17,715 INFO    : Module:scripts.indi0002 has been loaded, delete it
+2020-02-22 10:14:17,732 INFO    : Add record into cache, id:78b4115cdb5d9851ab8eb9c02206a93c3e4f05da247f4d809c5a9fac, acc:0.22750
+2020-02-22 10:14:17,735 INFO    : Add record into cache, id:b7fade361ff0a20dc407b35c69a854321a2771a56ee3861a521b6375, acc:0.22630
+2020-02-22 10:14:17,738 INFO    : Add record into cache, id:0625c5d8ab4b919c3c08aec6e4ce3ec945c8cac6fc585aff7525d973, acc:0.23570
+2020-02-22 10:14:17,740 INFO    : EVOLVE[1-gen]-Finish the evaluation
+2020-02-22 10:14:17,754 INFO    : EVOLVE[1-gen]-Finish the environment selection
+2020-02-22 10:14:17,755 INFO    : EVOLVE[2-gen]-Begin to crossover and mutation
+2020-02-22 10:14:17,760 INFO    : Add edge of identity for #indi0100 from vertex #0 to #2
+2020-02-22 10:14:17,761 INFO    : Alert the learning rate of #indi0100 from 0.037 to 0.746
+2020-02-22 10:14:17,770 INFO    : Add edge of identity for #indi0101 from vertex #0 to #3
+2020-02-22 10:14:17,772 INFO    : Alert the learning rate of #indi0101 from 0.071 to 0.892
+2020-02-22 10:14:17,780 INFO    : Add Vertex for #indi0101 after vertex#1 as bn_relu with conv edge
+2020-02-22 10:14:17,788 INFO    : Alert the learning rate of #indi0102 from 0.015 to 1.571
+2020-02-22 10:14:17,810 INFO    : EVOLVE[2-gen]-Finish crossover and mutation
+2020-02-22 10:14:17,811 INFO    : EVOLVE[2-gen]-Begin to evaluate the fitness
+2020-02-22 10:14:17,815 INFO    : Begin to generate python files
+2020-02-22 10:14:17,822 INFO    : Finish the generation of python files
+2020-02-22 10:14:17,824 INFO    : Query fitness from cache
+2020-02-22 10:14:17,826 INFO    : Total hit 0 individuals for fitness
+2020-02-22 10:27:17,920 INFO    : Add record into cache, id:6b8d8ee1ebe9570849c75b14dbc863a52003974cf5e47131887bcb91, acc:0.25380
+2020-02-22 10:27:17,923 INFO    : Add record into cache, id:5bc3043f015dbfb3089e206f3c1339d81b436a2352b3282f682b89e8, acc:0.39720
+2020-02-22 10:27:17,926 INFO    : Add record into cache, id:0625c5d8ab4b919c3c08aec6e4ce3ec945c8cac6fc585aff7525d973, acc:0.26950
+2020-02-22 10:27:17,928 INFO    : EVOLVE[2-gen]-Finish the evaluation
+2020-02-22 10:27:17,938 INFO    : EVOLVE[2-gen]-Finish the environment selection
+2020-02-22 10:27:17,939 INFO    : EVOLVE[3-gen]-Begin to crossover and mutation
+2020-02-22 10:27:17,947 INFO    : Add edge of identity for #indi0200 from vertex #2 to #4
+2020-02-22 10:27:17,952 INFO    : Add edge of identity for #indi0200 from vertex #1 to #4
+2020-02-22 10:27:17,954 INFO    : Alert the learning rate of #indi0200 from 0.122 to 1.708
+2020-02-22 10:27:17,960 INFO    : Alert the learning rate of #indi0201 from 0.045 to 0.904
+2020-02-22 10:27:17,966 INFO    : Add Vertex for #indi0201 after vertex#2 as bn_relu with conv edge
+2020-02-22 10:27:17,969 INFO    : Alert the learning rate of #indi0202 from 0.041 to 1.106
+2020-02-22 10:27:17,971 INFO    : Alert the learning rate of #indi0202 from 0.061 to 1.473
+2020-02-22 10:27:17,972 INFO    : Remove edge of conv for #indi0202 which is from vertex#0 to #2
+2020-02-22 10:27:18,089 INFO    : EVOLVE[3-gen]-Finish crossover and mutation
+2020-02-22 10:27:18,090 INFO    : EVOLVE[3-gen]-Begin to evaluate the fitness
+2020-02-22 10:27:18,091 INFO    : Begin to generate python files
+2020-02-22 10:27:18,099 INFO    : Finish the generation of python files
+2020-02-22 10:27:18,101 INFO    : Query fitness from cache
+2020-02-22 10:27:18,103 INFO    : Total hit 0 individuals for fitness
+2020-02-22 10:40:18,166 INFO    : Add record into cache, id:52da4766a84a4a5c64bb217c7e309aa1e6de240e8799c989b1c92640, acc:0.22250
+2020-02-22 10:40:18,169 INFO    : Add record into cache, id:b7fade361ff0a20dc407b35c69a854321a2771a56ee3861a521b6375, acc:0.33040
+2020-02-22 10:40:18,271 INFO    : Add record into cache, id:33da9082c84d15ab1231632d0cff264a85f55bc77de24fdd91c8eb08, acc:0.23190
+2020-02-22 10:40:18,274 INFO    : EVOLVE[3-gen]-Finish the evaluation
+2020-02-22 10:40:18,284 INFO    : EVOLVE[3-gen]-Finish the environment selection
+2020-02-22 10:40:18,285 INFO    : EVOLVE[4-gen]-Begin to crossover and mutation
+2020-02-22 10:40:18,292 INFO    : Add edge of identity for #indi0300 from vertex #0 to #3
+2020-02-22 10:40:18,294 INFO    : Alert the learning rate of #indi0300 from 0.036 to 0.511
+2020-02-22 10:40:18,295 INFO    : Remove edge of identity for #indi0300 which is from vertex#0 to #3
+2020-02-22 10:40:18,302 INFO    : Add edge of identity for #indi0301 from vertex #1 to #4
+2020-02-22 10:40:18,304 INFO    : Alert the learning rate of #indi0301 from 0.064 to 0.903
+2020-02-22 10:40:18,307 INFO    : Add Vertex for #indi0301 after vertex#2 as bn_relu with identity edge
+2020-02-22 10:40:18,308 INFO    : Remove edge of conv for #indi0301 which is from vertex#0 to #5
+2020-02-22 10:40:18,312 INFO    : Alert the learning rate of #indi0302 from 0.051 to 1.030
+2020-02-22 10:40:18,313 INFO    : Alert the learning rate of #indi0302 from 0.029 to 0.558
+2020-02-22 10:40:18,332 INFO    : EVOLVE[4-gen]-Finish crossover and mutation
+2020-02-22 10:40:18,333 INFO    : EVOLVE[4-gen]-Begin to evaluate the fitness
+2020-02-22 10:40:18,334 INFO    : Begin to generate python files
+2020-02-22 10:40:18,342 INFO    : Finish the generation of python files
+2020-02-22 10:40:18,343 INFO    : Query fitness from cache
+2020-02-22 10:40:18,344 INFO    : Total hit 0 individuals for fitness
+2020-02-22 10:44:53,943 INFO    : *************************
+2020-02-22 10:44:53,955 INFO    : Initialize...
+2020-02-22 10:44:54,068 INFO    : EVOLVE[0-gen]-Begin to evaluate the fitness
+2020-02-22 10:44:54,077 INFO    : Begin to generate python files
+2020-02-22 10:44:54,121 INFO    : Finish the generation of python files
+2020-02-22 10:44:54,127 INFO    : Query fitness from cache
+2020-02-22 10:44:54,139 INFO    : Total hit 0 individuals for fitness
+2020-02-22 10:52:46,331 INFO    : *************************
+2020-02-22 10:52:46,339 INFO    : Initialize...
+2020-02-22 10:52:46,347 INFO    : EVOLVE[0-gen]-Begin to evaluate the fitness
+2020-02-22 10:52:46,349 INFO    : Begin to generate python files
+2020-02-22 10:52:46,356 INFO    : Finish the generation of python files
+2020-02-22 10:52:46,357 INFO    : Query fitness from cache
+2020-02-22 10:52:46,360 INFO    : Total hit 0 individuals for fitness
+2020-02-22 11:00:47,250 INFO    : Add record into cache, id:33da9082c84d15ab1231632d0cff264a85f55bc77de24fdd91c8eb08, acc:0.22750
+2020-02-22 11:00:47,253 INFO    : Add record into cache, id:33da9082c84d15ab1231632d0cff264a85f55bc77de24fdd91c8eb08, acc:0.22630
+2020-02-22 11:00:47,261 INFO    : Add record into cache, id:33da9082c84d15ab1231632d0cff264a85f55bc77de24fdd91c8eb08, acc:0.23570
+2020-02-22 11:00:47,268 INFO    : EVOLVE[0-gen]-Finish the evaluation
+2020-02-22 11:00:47,276 INFO    : EVOLVE[1-gen]-Begin to crossover and mutation
+2020-02-22 11:00:47,287 INFO    : Alert the learning rate of #indi0000 from 0.085 to 1.703
+2020-02-22 11:00:47,291 INFO    : Alert the learning rate of #indi0000 from 0.168 to 1.973
+2020-02-22 11:00:47,309 INFO    : Alert the learning rate of #indi0001 from 0.038 to 0.762
+2020-02-22 11:00:47,311 INFO    : Alert the learning rate of #indi0001 from 0.043 to 1.124
+2020-02-22 11:00:47,330 INFO    : Add edge of identity for #indi0002 from vertex #0 to #2
+2020-02-22 11:00:47,332 INFO    : Alert the learning rate of #indi0002 from 0.032 to 0.642
+2020-02-22 11:00:47,340 INFO    : Add Vertex for #indi0002 after vertex#2 as bn_relu with conv edge
+2020-02-22 11:00:47,376 INFO    : EVOLVE[1-gen]-Finish crossover and mutation
+2020-02-22 11:00:47,379 INFO    : EVOLVE[1-gen]-Begin to evaluate the fitness
+2020-02-22 11:00:47,383 INFO    : Begin to generate python files
+2020-02-22 11:00:47,395 INFO    : Finish the generation of python files
+2020-02-22 11:00:47,398 INFO    : Query fitness from cache
+2020-02-22 11:00:47,404 INFO    : Total hit 0 individuals for fitness
+2020-02-22 11:01:47,408 INFO    : Module:scripts.indi0000 has been loaded, delete it
+2020-02-22 11:02:47,463 INFO    : Module:scripts.indi0001 has been loaded, delete it
+2020-02-22 11:03:47,573 INFO    : Module:scripts.indi0002 has been loaded, delete it
+2020-02-22 11:08:47,667 INFO    : Add record into cache, id:33da9082c84d15ab1231632d0cff264a85f55bc77de24fdd91c8eb08, acc:0.22750
+2020-02-22 11:08:47,687 INFO    : Add record into cache, id:33da9082c84d15ab1231632d0cff264a85f55bc77de24fdd91c8eb08, acc:0.22630
+2020-02-22 11:08:47,700 INFO    : Add record into cache, id:ad03ac82505dfb0fae3babc5c31a3538b5eae4af56b8c0b7160376f1, acc:0.23570
+2020-02-22 11:08:47,707 INFO    : EVOLVE[1-gen]-Finish the evaluation
+2020-02-22 11:08:47,831 INFO    : EVOLVE[1-gen]-Finish the environment selection
+2020-02-22 11:08:47,833 INFO    : EVOLVE[2-gen]-Begin to crossover and mutation
+2020-02-22 11:08:47,839 INFO    : Alert the learning rate of #indi0100 from 0.044 to 0.881
+2020-02-22 11:08:47,849 INFO    : Add Vertex for #indi0100 after vertex#1 as linear with conv edge
+2020-02-22 11:08:47,865 INFO    : Add edge of identity for #indi0101 from vertex #1 to #3
+2020-02-22 11:08:47,868 INFO    : Alert the learning rate of #indi0101 from 0.019 to 0.603
+2020-02-22 11:08:47,870 INFO    : Remove edge of identity for #indi0101 which is from vertex#0 to #3
+2020-02-22 11:08:47,881 INFO    : Alert the learning rate of #indi0102 from 0.147 to 0.876
+2020-02-22 11:08:47,888 INFO    : Add edge of identity for #indi0102 from vertex #0 to #2
+2020-02-22 11:08:47,892 INFO    : Alert the learning rate of #indi0102 from 0.281 to 1.907
+2020-02-22 11:08:47,941 INFO    : EVOLVE[2-gen]-Finish crossover and mutation
+2020-02-22 11:08:47,946 INFO    : EVOLVE[2-gen]-Begin to evaluate the fitness
+2020-02-22 11:08:47,949 INFO    : Begin to generate python files
+2020-02-22 11:08:47,982 INFO    : Finish the generation of python files
+2020-02-22 11:08:47,984 INFO    : Query fitness from cache
+2020-02-22 11:08:47,988 INFO    : Total hit 0 individuals for fitness
+2020-02-22 11:16:48,204 INFO    : Add record into cache, id:7a6e98126c7e9b5477d30b80f6bb8866e141c680e3af6d8e3ca31ce8, acc:0.26010
+2020-02-22 11:16:48,215 INFO    : Add record into cache, id:d783ada66b5f1858079ac5f79b02eafe099d5329fdc08c890f772ab1, acc:0.34050
+2020-02-22 11:16:48,227 INFO    : Add record into cache, id:0625c5d8ab4b919c3c08aec6e4ce3ec945c8cac6fc585aff7525d973, acc:0.24250
+2020-02-22 11:16:48,253 INFO    : EVOLVE[2-gen]-Finish the evaluation
+2020-02-22 11:16:48,437 INFO    : EVOLVE[2-gen]-Finish the environment selection
+2020-02-22 11:16:48,443 INFO    : EVOLVE[3-gen]-Begin to crossover and mutation
+2020-02-22 11:16:48,474 INFO    : Add edge of identity for #indi0200 from vertex #0 to #3
+2020-02-22 11:16:48,480 INFO    : Alert the learning rate of #indi0200 from 0.019 to 0.962
+2020-02-22 11:16:48,492 INFO    : Alert the learning rate of #indi0201 from 0.026 to 0.814
+2020-02-22 11:16:48,502 INFO    : Add Vertex for #indi0201 after vertex#1 as linear with conv edge
+2020-02-22 11:16:48,525 INFO    : Add edge of identity for #indi0202 from vertex #0 to #2
+2020-02-22 11:16:48,528 INFO    : Alert the learning rate of #indi0202 from 0.054 to 1.217
+2020-02-22 11:16:48,529 INFO    : Remove edge of identity for #indi0202 which is from vertex#0 to #2
+2020-02-22 11:16:48,558 INFO    : EVOLVE[3-gen]-Finish crossover and mutation
+2020-02-22 11:16:48,559 INFO    : EVOLVE[3-gen]-Begin to evaluate the fitness
+2020-02-22 11:16:48,561 INFO    : Begin to generate python files
+2020-02-22 11:16:48,569 INFO    : Finish the generation of python files
+2020-02-22 11:16:48,570 INFO    : Query fitness from cache
+2020-02-22 11:16:48,573 INFO    : Total hit 0 individuals for fitness
+2020-02-22 11:24:48,863 INFO    : Add record into cache, id:cac4a52de744e83984d4e18f0c0afce514e5fbc38eddc4d9c07d502e, acc:0.22250
+2020-02-22 11:24:48,896 INFO    : Add record into cache, id:0a4af92aaf817f02a62e73e566a7998e92e8cec2a75dc65e5360e525, acc:0.33040
+2020-02-22 11:24:48,913 INFO    : Add record into cache, id:7a6e98126c7e9b5477d30b80f6bb8866e141c680e3af6d8e3ca31ce8, acc:0.23190
+2020-02-22 11:24:48,925 INFO    : EVOLVE[3-gen]-Finish the evaluation
+2020-02-22 11:24:49,062 INFO    : EVOLVE[3-gen]-Finish the environment selection
+2020-02-22 11:24:49,131 INFO    : EVOLVE[4-gen]-Begin to crossover and mutation
+2020-02-22 11:24:49,297 INFO    : Add edge of identity for #indi0300 from vertex #0 to #3
+2020-02-22 11:24:49,340 INFO    : Alert the learning rate of #indi0300 from 0.047 to 1.073
+2020-02-22 11:24:49,376 INFO    : Alert the learning rate of #indi0301 from 0.021 to 1.149
+2020-02-22 11:24:49,380 INFO    : Add Vertex for #indi0301 after vertex#2 as bn_relu with conv edge
+2020-02-22 11:24:49,393 INFO    : Add edge of identity for #indi0302 from vertex #0 to #2
+2020-02-22 11:24:49,394 INFO    : Alert the learning rate of #indi0302 from 0.028 to 1.471
+2020-02-22 11:24:49,396 INFO    : Remove edge of conv for #indi0302 which is from vertex#0 to #2
+2020-02-22 11:24:49,485 INFO    : EVOLVE[4-gen]-Finish crossover and mutation
+2020-02-22 11:24:49,489 INFO    : EVOLVE[4-gen]-Begin to evaluate the fitness
+2020-02-22 11:24:49,491 INFO    : Begin to generate python files
+2020-02-22 11:24:49,499 INFO    : Finish the generation of python files
+2020-02-22 11:24:49,502 INFO    : Query fitness from cache
+2020-02-22 11:24:49,523 INFO    : Total hit 0 individuals for fitness
+2020-02-22 11:32:49,988 INFO    : Add record into cache, id:22d6e9858907d8bcd5539cd46befa5bed97c9897968faf9ceb1b5dfc, acc:0.25600
+2020-02-22 11:32:49,994 INFO    : Add record into cache, id:bb27cf7d4459ed31d76554722ab924e119d0b9416b4225b9a360f887, acc:0.30140
+2020-02-22 11:32:50,000 INFO    : Add record into cache, id:d783ada66b5f1858079ac5f79b02eafe099d5329fdc08c890f772ab1, acc:0.33280
+2020-02-22 11:32:50,004 INFO    : EVOLVE[4-gen]-Finish the evaluation
+2020-02-22 11:32:50,030 INFO    : EVOLVE[4-gen]-Finish the environment selection
+2020-02-22 13:39:25,321 INFO    : *************************
+2020-02-22 13:39:25,325 INFO    : Initialize...
+2020-02-22 13:39:25,330 INFO    : EVOLVE[0-gen]-Begin to evaluate the fitness
+2020-02-22 13:39:25,332 INFO    : Begin to generate python files
+2020-02-22 13:39:25,344 INFO    : Finish the generation of python files
+2020-02-22 13:39:25,347 INFO    : Query fitness from cache
+2020-02-22 13:39:25,350 INFO    : Total hit 0 individuals for fitness
+2020-02-22 13:49:26,749 INFO    : Add record into cache, id:33da9082c84d15ab1231632d0cff264a85f55bc77de24fdd91c8eb08, acc:0.22750
+2020-02-22 13:49:26,758 INFO    : Add record into cache, id:33da9082c84d15ab1231632d0cff264a85f55bc77de24fdd91c8eb08, acc:0.22630
+2020-02-22 13:49:26,786 INFO    : Add record into cache, id:33da9082c84d15ab1231632d0cff264a85f55bc77de24fdd91c8eb08, acc:0.23570
+2020-02-22 13:49:26,814 INFO    : Add record into cache, id:33da9082c84d15ab1231632d0cff264a85f55bc77de24fdd91c8eb08, acc:0.23930
+2020-02-22 13:49:26,841 INFO    : Add record into cache, id:33da9082c84d15ab1231632d0cff264a85f55bc77de24fdd91c8eb08, acc:0.22320
+2020-02-22 13:49:26,867 INFO    : EVOLVE[0-gen]-Finish the evaluation
+2020-02-22 13:49:26,886 INFO    : EVOLVE[1-gen]-Begin to crossover and mutation
+2020-02-22 13:49:27,074 INFO    : Add edge of identity for #indi0000 from vertex #0 to #2
+2020-02-22 13:49:27,077 INFO    : Alert the learning rate of #indi0000 from 0.055 to 1.095
+2020-02-22 13:49:27,078 INFO    : Remove edge of identity for #indi0000 which is from vertex#0 to #2
+2020-02-22 13:49:27,088 INFO    : Add edge of identity for #indi0001 from vertex #0 to #2
+2020-02-22 13:49:27,089 INFO    : Alert the learning rate of #indi0001 from 0.045 to 0.898
+2020-02-22 13:49:27,097 INFO    : Alert the learning rate of #indi0002 from 0.055 to 1.110
+2020-02-22 13:49:27,246 INFO    : Add edge of identity for #indi0002 from vertex #0 to #2
+2020-02-22 13:49:27,249 INFO    : Alert the learning rate of #indi0002 from 0.039 to 0.709
+2020-02-22 13:49:27,250 INFO    : Remove edge of identity for #indi0002 which is from vertex#0 to #2
+2020-02-22 13:49:27,261 INFO    : Add edge of identity for #indi0003 from vertex #0 to #2
+2020-02-22 13:49:27,264 INFO    : Alert the learning rate of #indi0003 from 0.026 to 0.518
+2020-02-22 13:49:27,275 INFO    : Add edge of identity for #indi0004 from vertex #0 to #2
+2020-02-22 13:49:27,276 INFO    : Alert the learning rate of #indi0004 from 0.028 to 0.556
+2020-02-22 13:49:27,278 INFO    : Remove edge of conv for #indi0004 which is from vertex#0 to #2
+2020-02-22 13:49:27,373 INFO    : EVOLVE[1-gen]-Finish crossover and mutation
+2020-02-22 13:49:27,375 INFO    : EVOLVE[1-gen]-Begin to evaluate the fitness
+2020-02-22 13:49:27,376 INFO    : Begin to generate python files
+2020-02-22 13:49:27,462 INFO    : Finish the generation of python files
+2020-02-22 13:49:27,505 INFO    : Query fitness from cache
+2020-02-22 13:49:27,559 INFO    : Total hit 0 individuals for fitness
+2020-02-22 13:50:27,620 INFO    : Module:scripts.indi0000 has been loaded, delete it
+2020-02-22 13:51:27,964 INFO    : Module:scripts.indi0001 has been loaded, delete it
+2020-02-22 13:52:28,388 INFO    : Module:scripts.indi0002 has been loaded, delete it
+2020-02-22 13:53:28,631 INFO    : Module:scripts.indi0003 has been loaded, delete it
+2020-02-22 13:54:28,925 INFO    : Module:scripts.indi0004 has been loaded, delete it
+2020-02-22 13:59:29,209 INFO    : Add record into cache, id:33da9082c84d15ab1231632d0cff264a85f55bc77de24fdd91c8eb08, acc:0.22750
+2020-02-22 13:59:29,286 INFO    : Add record into cache, id:6b8d8ee1ebe9570849c75b14dbc863a52003974cf5e47131887bcb91, acc:0.22630
+2020-02-22 13:59:29,339 INFO    : Add record into cache, id:33da9082c84d15ab1231632d0cff264a85f55bc77de24fdd91c8eb08, acc:0.23570
+2020-02-22 13:59:29,435 INFO    : Add record into cache, id:6b8d8ee1ebe9570849c75b14dbc863a52003974cf5e47131887bcb91, acc:0.23930
+2020-02-22 13:59:29,509 INFO    : Add record into cache, id:33da9082c84d15ab1231632d0cff264a85f55bc77de24fdd91c8eb08, acc:0.00000
+2020-02-22 13:59:29,584 INFO    : EVOLVE[1-gen]-Finish the evaluation
+2020-02-22 13:59:29,813 INFO    : EVOLVE[1-gen]-Finish the environment selection
+2020-02-22 13:59:29,845 INFO    : EVOLVE[2-gen]-Begin to crossover and mutation
+2020-02-22 13:59:29,856 INFO    : Alert the learning rate of #indi0100 from 0.036 to 0.727
+2020-02-22 13:59:29,946 INFO    : Alert the learning rate of #indi0101 from 0.035 to 0.698
+2020-02-22 13:59:29,966 INFO    : Add Vertex for #indi0101 after vertex#1 as bn_relu with conv edge
+2020-02-22 13:59:29,974 INFO    : Alert the learning rate of #indi0102 from 0.039 to 0.789
+2020-02-22 13:59:30,220 INFO    : Add Vertex for #indi0102 after vertex#1 as linear with conv edge
+2020-02-22 13:59:30,304 INFO    : Alert the learning rate of #indi0103 from 0.034 to 1.305
+2020-02-22 13:59:30,379 INFO    : Remove edge of conv for #indi0103 which is from vertex#0 to #2
+2020-02-22 13:59:30,526 INFO    : Add edge of identity for #indi0104 from vertex #0 to #2
+2020-02-22 13:59:30,633 INFO    : Alert the learning rate of #indi0104 from 0.040 to 1.024
+2020-02-22 13:59:30,676 INFO    : Remove edge of conv for #indi0104 which is from vertex#0 to #2
+2020-02-22 13:59:30,919 INFO    : EVOLVE[2-gen]-Finish crossover and mutation
+2020-02-22 13:59:30,995 INFO    : EVOLVE[2-gen]-Begin to evaluate the fitness
+2020-02-22 13:59:31,016 INFO    : Begin to generate python files
+2020-02-22 13:59:31,119 INFO    : Finish the generation of python files
+2020-02-22 13:59:31,140 INFO    : Query fitness from cache
+2020-02-22 13:59:31,233 INFO    : Total hit 0 individuals for fitness
+2020-02-22 14:09:32,874 INFO    : Add record into cache, id:33da9082c84d15ab1231632d0cff264a85f55bc77de24fdd91c8eb08, acc:0.00000
+2020-02-22 14:09:32,938 INFO    : Add record into cache, id:94f30f5f64c384290f7c41ca4b18c8aea63011da4fb4aaeda52f7f74, acc:0.00000
+2020-02-22 14:09:32,942 INFO    : Add record into cache, id:63d6e1a10b39795d4d1f93e58634e011176670f3e5a1af16c60659d5, acc:0.24250
+2020-02-22 14:09:32,946 INFO    : Add record into cache, id:33da9082c84d15ab1231632d0cff264a85f55bc77de24fdd91c8eb08, acc:0.00000
+2020-02-22 14:09:32,949 INFO    : Add record into cache, id:33da9082c84d15ab1231632d0cff264a85f55bc77de24fdd91c8eb08, acc:0.00000
+2020-02-22 14:09:32,955 INFO    : EVOLVE[2-gen]-Finish the evaluation
+2020-02-22 14:09:33,129 INFO    : EVOLVE[2-gen]-Finish the environment selection
+2020-02-22 14:09:33,186 INFO    : EVOLVE[3-gen]-Begin to crossover and mutation
+2020-02-22 14:09:33,253 INFO    : Add edge of identity for #indi0200 from vertex #0 to #3
+2020-02-22 14:09:33,255 INFO    : Alert the learning rate of #indi0200 from 0.035 to 0.896
+2020-02-22 14:09:33,475 INFO    : Add edge of identity for #indi0201 from vertex #1 to #3
+2020-02-22 14:09:33,669 INFO    : Add edge of identity for #indi0201 from vertex #0 to #2
+2020-02-22 14:09:33,733 INFO    : Alert the learning rate of #indi0201 from 0.068 to 1.724
+2020-02-22 14:09:33,769 INFO    : Alert the learning rate of #indi0202 from 0.045 to 0.901
+2020-02-22 14:09:33,815 INFO    : Add Vertex for #indi0202 after vertex#2 as bn_relu with identity edge
+2020-02-22 14:09:33,827 INFO    : Add edge of identity for #indi0203 from vertex #0 to #2
+2020-02-22 14:09:33,829 INFO    : Alert the learning rate of #indi0203 from 0.067 to 1.342
+2020-02-22 14:09:33,833 INFO    : Add Vertex for #indi0203 after vertex#2 as bn_relu with conv edge
+2020-02-22 14:09:33,854 INFO    : Alert the learning rate of #indi0204 from 0.030 to 1.141
+2020-02-22 14:09:33,966 INFO    : Add Vertex for #indi0204 after vertex#1 as bn_relu with identity edge
+2020-02-22 14:09:33,968 INFO    : Remove edge of conv for #indi0204 which is from vertex#0 to #3
+2020-02-22 14:09:34,091 INFO    : EVOLVE[3-gen]-Finish crossover and mutation
+2020-02-22 14:09:34,107 INFO    : EVOLVE[3-gen]-Begin to evaluate the fitness
+2020-02-22 14:09:34,109 INFO    : Begin to generate python files
+2020-02-22 14:09:34,143 INFO    : Finish the generation of python files
+2020-02-22 14:09:34,149 INFO    : Query fitness from cache
+2020-02-22 14:09:34,151 INFO    : Total hit 0 individuals for fitness
+2020-02-22 15:49:36,628 INFO    : Add record into cache, id:88af3d0f182ea7ceb175877cd038421efff86677bee701520b21879d, acc:0.30610
+2020-02-22 15:49:36,632 INFO    : Add record into cache, id:08a3ace08ea9ffd1ed974c0efa805f385c07a32fc0af1be37d660ed7, acc:0.40090
+2020-02-22 15:49:36,636 INFO    : Add record into cache, id:1ca6b878b75b7dd95fab33c0b8fe78b50c7cd587f8ed7ef0b163fa3e, acc:0.22940
+2020-02-22 15:49:36,640 INFO    : Add record into cache, id:b60791320e6d2548997043d2ddc79977bb406c0b7331d9813ab2e72e, acc:0.39150
+2020-02-22 15:49:36,644 INFO    : Add record into cache, id:8b58c2c79ae87cca779419a8ebda7f9870473e03641765d65e044e9d, acc:0.00000
+2020-02-22 15:49:36,648 INFO    : EVOLVE[3-gen]-Finish the evaluation
+2020-02-22 15:49:36,811 INFO    : EVOLVE[3-gen]-Finish the environment selection
+2020-02-22 15:49:36,818 INFO    : EVOLVE[4-gen]-Begin to crossover and mutation
+2020-02-22 15:49:36,844 INFO    : Add edge of identity for #indi0300 from vertex #0 to #2
+2020-02-22 15:49:36,848 INFO    : Alert the learning rate of #indi0300 from 0.046 to 1.011
+2020-02-22 15:49:36,851 INFO    : Remove edge of identity for #indi0300 which is from vertex#0 to #2
+2020-02-22 15:49:36,881 INFO    : Add edge of identity for #indi0301 from vertex #0 to #3
+2020-02-22 15:49:36,885 INFO    : Alert the learning rate of #indi0301 from 0.057 to 0.836
+2020-02-22 15:49:36,890 INFO    : Add Vertex for #indi0301 after vertex#1 as bn_relu with conv edge
+2020-02-22 15:49:36,901 INFO    : Alert the learning rate of #indi0302 from 0.019 to 0.546
+2020-02-22 15:49:36,904 INFO    : Add Vertex for #indi0302 after vertex#1 as bn_relu with conv edge
+2020-02-22 15:49:36,918 INFO    : Add edge of identity for #indi0303 from vertex #0 to #2
+2020-02-22 15:49:36,920 INFO    : Alert the learning rate of #indi0303 from 0.043 to 0.851
+2020-02-22 15:49:36,934 INFO    : Add edge of identity for #indi0304 from vertex #0 to #2
+2020-02-22 15:49:36,938 INFO    : Add edge of identity for #indi0304 from vertex #0 to #3
+2020-02-22 15:49:36,940 INFO    : Alert the learning rate of #indi0304 from 0.035 to 0.879
+2020-02-22 15:49:37,034 INFO    : EVOLVE[4-gen]-Finish crossover and mutation
+2020-02-22 15:49:37,036 INFO    : EVOLVE[4-gen]-Begin to evaluate the fitness
+2020-02-22 15:49:37,039 INFO    : Begin to generate python files
+2020-02-22 15:49:37,109 INFO    : Finish the generation of python files
+2020-02-22 15:49:37,113 INFO    : Query fitness from cache
+2020-02-22 15:49:37,116 INFO    : Total hit 0 individuals for fitness
+2020-02-22 17:58:19,127 INFO    : *************************
+2020-02-22 17:58:19,220 INFO    : Initialize...
+2020-02-22 17:58:19,249 INFO    : EVOLVE[0-gen]-Begin to evaluate the fitness
+2020-02-22 17:58:19,251 INFO    : Begin to generate python files
+2020-02-22 17:58:19,418 INFO    : Finish the generation of python files
+2020-02-22 17:58:19,420 INFO    : Query fitness from cache
+2020-02-22 17:58:19,490 INFO    : Total hit 0 individuals for fitness
+2020-02-22 18:08:22,322 INFO    : Add record into cache, id:33da9082c84d15ab1231632d0cff264a85f55bc77de24fdd91c8eb08, acc:0.22750
+2020-02-22 18:08:22,406 INFO    : Add record into cache, id:33da9082c84d15ab1231632d0cff264a85f55bc77de24fdd91c8eb08, acc:0.22630
+2020-02-22 18:08:22,421 INFO    : Add record into cache, id:33da9082c84d15ab1231632d0cff264a85f55bc77de24fdd91c8eb08, acc:0.23570
+2020-02-22 18:08:22,424 INFO    : Add record into cache, id:33da9082c84d15ab1231632d0cff264a85f55bc77de24fdd91c8eb08, acc:0.24380
+2020-02-22 18:08:22,444 INFO    : Add record into cache, id:33da9082c84d15ab1231632d0cff264a85f55bc77de24fdd91c8eb08, acc:0.24220
+2020-02-22 18:08:22,472 INFO    : EVOLVE[0-gen]-Finish the evaluation
+2020-02-22 18:08:22,553 INFO    : EVOLVE[1-gen]-Begin to crossover and mutation
+2020-02-22 18:08:22,607 INFO    : Alert the learning rate of #indi0000 from 0.055 to 1.106
+2020-02-22 18:08:22,951 INFO    : Add Vertex for #indi0000 after vertex#2 as bn_relu with conv edge
+2020-02-22 18:08:23,017 INFO    : Alert the learning rate of #indi0001 from 0.094 to 1.882
+2020-02-22 18:08:23,258 INFO    : Add Vertex for #indi0001 after vertex#2 as bn_relu with conv edge
+2020-02-22 18:08:23,500 INFO    : Add edge of identity for #indi0002 from vertex #0 to #2
+2020-02-22 18:08:23,526 INFO    : Alert the learning rate of #indi0002 from 0.048 to 0.957
+2020-02-22 18:08:23,773 INFO    : Add Vertex for #indi0002 after vertex#2 as bn_relu with conv edge
+2020-02-22 18:08:23,867 INFO    : Add edge of identity for #indi0003 from vertex #0 to #2
+2020-02-22 18:08:23,954 INFO    : Alert the learning rate of #indi0003 from 0.048 to 0.964
+2020-02-22 18:08:24,081 INFO    : Alert the learning rate of #indi0004 from 0.029 to 0.588
+2020-02-22 18:08:24,256 INFO    : Add Vertex for #indi0004 after vertex#2 as bn_relu with conv edge
+2020-02-22 18:08:24,457 INFO    : EVOLVE[1-gen]-Finish crossover and mutation
+2020-02-22 18:08:24,625 INFO    : EVOLVE[1-gen]-Begin to evaluate the fitness
+2020-02-22 18:08:24,627 INFO    : Begin to generate python files
+2020-02-22 18:08:24,738 INFO    : Finish the generation of python files
+2020-02-22 18:08:24,768 INFO    : Query fitness from cache
+2020-02-22 18:08:24,776 INFO    : Total hit 0 individuals for fitness
+2020-02-22 18:09:24,896 INFO    : Module:scripts.indi0000 has been loaded, delete it
+2020-02-22 18:10:25,124 INFO    : Module:scripts.indi0001 has been loaded, delete it
+2020-02-22 18:11:25,464 INFO    : Module:scripts.indi0002 has been loaded, delete it
+2020-02-22 18:12:25,702 INFO    : Module:scripts.indi0003 has been loaded, delete it
+2020-02-22 18:13:26,316 INFO    : Module:scripts.indi0004 has been loaded, delete it
+2020-02-22 18:18:26,690 INFO    : Add record into cache, id:d07dd89052d1672de9ecc60a9243e16f5b7e8cc39773ccce834214c7, acc:0.22750
+2020-02-22 18:18:26,761 INFO    : Add record into cache, id:d07dd89052d1672de9ecc60a9243e16f5b7e8cc39773ccce834214c7, acc:0.22630
+2020-02-22 18:18:26,838 INFO    : Add record into cache, id:0472eff26625b3d5c3306d22e1672896bd77c45a157fd584b696c404, acc:0.23570
+2020-02-22 18:18:26,945 INFO    : Add record into cache, id:6b8d8ee1ebe9570849c75b14dbc863a52003974cf5e47131887bcb91, acc:0.24380
+2020-02-22 18:18:27,033 INFO    : Add record into cache, id:1e61f0a6e3f7cda1bd01bc56fb7a2c80c20f5042d28b53fb48627014, acc:0.24220
+2020-02-22 18:18:27,059 INFO    : EVOLVE[1-gen]-Finish the evaluation
+2020-02-22 18:18:27,265 INFO    : EVOLVE[1-gen]-Finish the environment selection
+2020-02-22 18:18:27,375 INFO    : EVOLVE[2-gen]-Begin to crossover and mutation
+2020-02-22 18:18:27,456 INFO    : Alert the learning rate of #indi0100 from 0.093 to 1.934
+2020-02-22 18:18:27,832 INFO    : Add Vertex for #indi0100 after vertex#2 as bn_relu with conv edge
+2020-02-22 18:18:28,174 INFO    : Add edge of identity for #indi0101 from vertex #0 to #3
+2020-02-22 18:18:28,223 INFO    : Alert the learning rate of #indi0101 from 0.042 to 0.767
+2020-02-22 18:18:28,275 INFO    : Remove edge of conv for #indi0101 which is from vertex#0 to #3
+2020-02-22 18:18:28,286 INFO    : Add edge of identity for #indi0102 from vertex #0 to #2
+2020-02-22 18:18:28,293 INFO    : Add edge of identity for #indi0102 from vertex #1 to #3
+2020-02-22 18:18:28,294 INFO    : Alert the learning rate of #indi0102 from 0.073 to 1.521
+2020-02-22 18:18:28,297 INFO    : Add Vertex for #indi0102 after vertex#2 as bn_relu with conv edge
+2020-02-22 18:18:28,408 INFO    : Add edge of identity for #indi0103 from vertex #0 to #2
+2020-02-22 18:18:28,458 INFO    : Alert the learning rate of #indi0103 from 0.068 to 1.417
+2020-02-22 18:18:28,579 INFO    : Alert the learning rate of #indi0104 from 0.041 to 0.813
+2020-02-22 18:18:28,651 INFO    : Alert the learning rate of #indi0104 from 0.031 to 0.774
+2020-02-22 18:18:28,747 INFO    : Alert the learning rate of #indi0104 from 0.039 to 1.253
+2020-02-22 18:18:29,290 INFO    : Add Vertex for #indi0104 after vertex#2 as bn_relu with conv edge
+2020-02-22 18:18:29,629 INFO    : EVOLVE[2-gen]-Finish crossover and mutation
+2020-02-22 18:18:29,765 INFO    : EVOLVE[2-gen]-Begin to evaluate the fitness
+2020-02-22 18:18:29,887 INFO    : Begin to generate python files
+2020-02-22 18:18:30,105 INFO    : Finish the generation of python files
+2020-02-22 18:18:30,123 INFO    : Query fitness from cache
+2020-02-22 18:18:30,262 INFO    : Total hit 0 individuals for fitness
+2020-02-22 18:28:32,487 INFO    : Add record into cache, id:3f31a1108d4242a22dd2895415caf18a81df569062e7e9145e78050a, acc:0.00000
+2020-02-22 18:28:32,701 INFO    : Add record into cache, id:d07dd89052d1672de9ecc60a9243e16f5b7e8cc39773ccce834214c7, acc:0.00000
+2020-02-22 18:28:32,879 INFO    : Add record into cache, id:eab9a90cfe40e2e2fda37e6dc1c6d4b726c863d7f21ad14bb0acd9fb, acc:0.31220
+2020-02-22 18:28:33,035 INFO    : Add record into cache, id:566da249c291f935130a0ad4ee0bda6948a7dec2d12c0f540407a509, acc:0.00000
+2020-02-22 18:28:33,181 INFO    : Add record into cache, id:d07dd89052d1672de9ecc60a9243e16f5b7e8cc39773ccce834214c7, acc:0.00000
+2020-02-22 18:28:33,386 INFO    : EVOLVE[2-gen]-Finish the evaluation
+2020-02-22 18:28:33,932 INFO    : EVOLVE[2-gen]-Finish the environment selection
+2020-02-22 18:28:33,994 INFO    : EVOLVE[3-gen]-Begin to crossover and mutation
+2020-02-22 18:28:34,103 INFO    : Add edge of identity for #indi0200 from vertex #1 to #3
+2020-02-22 18:28:34,118 INFO    : Alert the learning rate of #indi0200 from 0.050 to 1.046
+2020-02-22 18:28:34,256 INFO    : Add edge of identity for #indi0201 from vertex #0 to #2
+2020-02-22 18:28:34,270 INFO    : Alert the learning rate of #indi0201 from 0.035 to 0.739
+2020-02-22 18:28:34,514 INFO    : Add edge of identity for #indi0202 from vertex #1 to #3
+2020-02-22 18:28:35,011 INFO    : Add edge of identity for #indi0202 from vertex #0 to #2
+2020-02-22 18:28:35,115 INFO    : Alert the learning rate of #indi0202 from 0.030 to 0.631
+2020-02-22 18:28:35,211 INFO    : Remove edge of conv for #indi0202 which is from vertex#0 to #3
+2020-02-22 18:28:35,467 INFO    : Add edge of identity for #indi0203 from vertex #1 to #3
+2020-02-22 18:28:35,549 INFO    : Alert the learning rate of #indi0203 from 0.049 to 0.678
+2020-02-22 18:28:35,850 INFO    : Add Vertex for #indi0203 after vertex#3 as bn_relu with conv edge
+2020-02-22 18:28:35,891 INFO    : Remove edge of conv for #indi0203 which is from vertex#1 to #5
+2020-02-22 18:28:36,332 INFO    : Add edge of identity for #indi0204 from vertex #1 to #3
+2020-02-22 18:28:36,334 INFO    : Alert the learning rate of #indi0204 from 0.088 to 1.848
+2020-02-22 18:28:36,337 INFO    : Add Vertex for #indi0204 after vertex#2 as bn_relu with conv edge
+2020-02-22 18:28:36,338 INFO    : Remove edge of conv for #indi0204 which is from vertex#0 to #4
+2020-02-22 18:28:36,647 INFO    : EVOLVE[3-gen]-Finish crossover and mutation
+2020-02-22 18:28:36,843 INFO    : EVOLVE[3-gen]-Begin to evaluate the fitness
+2020-02-22 18:28:36,935 INFO    : Begin to generate python files
+2020-02-22 18:28:37,181 INFO    : Finish the generation of python files
+2020-02-22 18:28:37,202 INFO    : Query fitness from cache
+2020-02-22 18:28:37,205 INFO    : Total hit 0 individuals for fitness
+2020-02-22 18:38:43,017 INFO    : Add record into cache, id:8b0f8dcdc1a8c44decc4e7857b3a43104f6aefad35e3010a31914ce9, acc:0.30610
+2020-02-22 18:38:49,144 INFO    : Add record into cache, id:566da249c291f935130a0ad4ee0bda6948a7dec2d12c0f540407a509, acc:0.29170
+2020-02-22 18:38:49,266 INFO    : Add record into cache, id:7b4177854d2afb538c8eccef35909c20c01366ab1d45b427a3e437ae, acc:0.22940
+2020-02-22 18:38:49,291 INFO    : Add record into cache, id:00b121b658b7670601a3a5de7b671d2ad51ff3473a3c82af09e8a7da, acc:0.39150
+2020-02-22 18:38:49,313 INFO    : Add record into cache, id:6e1f371066b0a82d004626cd961c2deaf1759c3700b71d60005f63eb, acc:0.00000
+2020-02-22 18:38:49,324 INFO    : EVOLVE[3-gen]-Finish the evaluation
+2020-02-22 18:38:49,406 INFO    : EVOLVE[3-gen]-Finish the environment selection
+2020-02-22 18:38:49,429 INFO    : EVOLVE[4-gen]-Begin to crossover and mutation
+2020-02-22 18:38:49,505 INFO    : Add edge of identity for #indi0300 from vertex #0 to #2
+2020-02-22 18:38:49,676 INFO    : Add edge of identity for #indi0300 from vertex #1 to #3
+2020-02-22 18:38:49,696 INFO    : Alert the learning rate of #indi0300 from 0.069 to 0.952
+2020-02-22 18:38:49,725 INFO    : Alert the learning rate of #indi0301 from 0.061 to 1.734
+2020-02-22 18:38:49,747 INFO    : Alert the learning rate of #indi0301 from 0.047 to 0.764
+2020-02-22 18:38:49,758 INFO    : Remove edge of conv for #indi0301 which is from vertex#0 to #2
+2020-02-22 18:38:49,820 INFO    : Add edge of identity for #indi0302 from vertex #0 to #2
+2020-02-22 18:38:49,829 INFO    : Alert the learning rate of #indi0302 from 0.113 to 1.549
+2020-02-22 18:38:49,937 INFO    : Add Vertex for #indi0302 after vertex#2 as bn_relu with conv edge
+2020-02-22 18:38:49,948 INFO    : Alert the learning rate of #indi0303 from 0.027 to 0.568
+2020-02-22 18:38:49,966 INFO    : Remove edge of conv for #indi0303 which is from vertex#0 to #3
+2020-02-22 18:38:49,980 INFO    : Add edge of identity for #indi0304 from vertex #2 to #4
+2020-02-22 18:38:49,983 INFO    : Add edge of identity for #indi0304 from vertex #1 to #3
+2020-02-22 18:38:49,984 INFO    : Alert the learning rate of #indi0304 from 0.028 to 0.572
+2020-02-22 18:38:50,263 INFO    : EVOLVE[4-gen]-Finish crossover and mutation
+2020-02-22 18:38:50,269 INFO    : EVOLVE[4-gen]-Begin to evaluate the fitness
+2020-02-22 18:38:50,300 INFO    : Begin to generate python files
+2020-02-22 18:38:50,368 INFO    : Finish the generation of python files
+2020-02-22 18:38:50,385 INFO    : Query fitness from cache
+2020-02-22 18:38:50,399 INFO    : Total hit 0 individuals for fitness
+2020-02-22 18:48:52,263 INFO    : Add record into cache, id:0eb4f5c3cfed5f792fc9f70bb451c410d09198a42d72d8c77d455cf6, acc:0.22590
+2020-02-22 18:48:52,303 INFO    : Add record into cache, id:0472eff26625b3d5c3306d22e1672896bd77c45a157fd584b696c404, acc:0.00000
+2020-02-22 18:48:52,322 INFO    : Add record into cache, id:5bfb485c8ba78cc60b3e7fa1d9df1c05c93210d231a71e0d09ce0984, acc:0.33280
+2020-02-22 18:48:52,336 INFO    : Add record into cache, id:d07dd89052d1672de9ecc60a9243e16f5b7e8cc39773ccce834214c7, acc:0.30210
+2020-02-22 18:48:52,439 INFO    : Add record into cache, id:c97c13873b6acece04a2c266ca4c2561bbb1584b8c2e844c6c90816c, acc:0.30730
+2020-02-22 18:48:52,450 INFO    : EVOLVE[4-gen]-Finish the evaluation
+2020-02-22 18:48:52,563 INFO    : EVOLVE[4-gen]-Finish the environment selection
+2020-02-22 20:16:48,668 INFO    : *************************
+2020-02-22 20:16:48,697 INFO    : Initialize...
+2020-02-22 20:16:48,712 INFO    : EVOLVE[0-gen]-Begin to evaluate the fitness
+2020-02-22 20:16:48,737 INFO    : Begin to generate python files
+2020-02-22 20:16:48,928 INFO    : Finish the generation of python files
+2020-02-22 20:16:48,932 INFO    : Query fitness from cache
+2020-02-22 20:16:49,144 INFO    : Total hit 0 individuals for fitness

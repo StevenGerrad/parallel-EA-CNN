@@ -1,0 +1,4 @@
+[2020-02-22 18:39:53.109273]-Used CPU#0, worker name:Process-21[20016]
+[2020-02-22 20:04:50.937949]-Exception occur:[enforce fail at ..\c10\core\CPUAllocator.cpp:72] data. DefaultCPUAllocator: not enough memory: you tried to allocate 2867200 bytes. Buy new RAM!
+
+[2020-02-22 20:04:50.997789]-Finished-Acc:0.000

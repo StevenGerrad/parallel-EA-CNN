@@ -1,0 +1,26 @@
+[2020-02-22 18:20:34.571472]-Used CPU#0, worker name:Process-12[4592]
+[2020-02-22 18:39:16.094611]-Train-Epoch:  1,  Loss: 1.924, Acc:0.000
+[2020-02-22 18:39:26.995079]-Validate-Loss:1.790, Acc:0.320
+[2020-02-22 18:48:13.142461]-Train-Epoch:  2,  Loss: 1.804, Acc:0.000
+[2020-02-22 18:48:24.890660]-Validate-Loss:1.767, Acc:0.328
+[2020-02-22 18:59:15.357740]-Train-Epoch:  3,  Loss: 1.794, Acc:0.000
+[2020-02-22 18:59:23.429662]-Validate-Loss:1.750, Acc:0.334
+[2020-02-22 19:06:10.793903]-Train-Epoch:  4,  Loss: 1.760, Acc:0.000
+[2020-02-22 19:06:18.675824]-Validate-Loss:1.720, Acc:0.350
+[2020-02-22 19:12:56.676680]-Train-Epoch:  5,  Loss: 1.745, Acc:0.000
+[2020-02-22 19:13:04.398031]-Validate-Loss:1.699, Acc:0.365
+[2020-02-22 19:19:48.188894]-Train-Epoch:  6,  Loss: 1.733, Acc:0.000
+[2020-02-22 19:19:56.309178]-Validate-Loss:1.702, Acc:0.377
+[2020-02-22 19:26:26.741642]-Train-Epoch:  7,  Loss: 1.722, Acc:0.000
+[2020-02-22 19:26:34.425093]-Validate-Loss:1.745, Acc:0.339
+[2020-02-22 19:33:07.517428]-Train-Epoch:  8,  Loss: 1.711, Acc:0.000
+[2020-02-22 19:33:15.498128]-Validate-Loss:1.700, Acc:0.366
+[2020-02-22 19:39:58.410780]-Train-Epoch:  9,  Loss: 1.711, Acc:0.000
+[2020-02-22 19:40:06.316637]-Validate-Loss:1.695, Acc:0.375
+[2020-02-22 19:48:23.044546]-Train-Epoch: 10,  Loss: 1.709, Acc:0.000
+[2020-02-22 19:48:32.964038]-Validate-Loss:1.704, Acc:0.357
+[2020-02-22 19:57:13.185252]-Train-Epoch: 11,  Loss: 1.703, Acc:0.000
+[2020-02-22 19:57:24.118567]-Validate-Loss:1.693, Acc:0.365
+[2020-02-22 20:04:49.697252]-Exception occur:[enforce fail at ..\c10\core\CPUAllocator.cpp:72] data. DefaultCPUAllocator: not enough memory: you tried to allocate 1433600 bytes. Buy new RAM!
+
+[2020-02-22 20:04:49.699247]-Finished-Acc:0.000

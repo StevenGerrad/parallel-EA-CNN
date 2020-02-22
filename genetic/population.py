@@ -25,6 +25,8 @@ class Individual(object):
         # TODO: output_channles为list, 是用来表示啥的???
         self.output_channles = params['output_channel']
 
+        self.learning_rate = params['learning_rate']
+
         self.params = params
         
 
@@ -57,32 +59,6 @@ class Individual(object):
                 for j in t_vertices[i]["edges_out"]:
                     ver.edges_out.add(self.edges[j])
         # self.units = []
-
-    def add_edge(self,
-                 from_vertex_id,
-                 to_vertex_id,
-                 edge_type='identity',
-                 depth_factor=1,
-                 filter_half_width=None,
-                 filter_half_height=None,
-                 stride_scale=0):
-        """
-        Adds an edge to the DNA graph, ensuring internal consistency.
-        """
-        edge = Edge(from_vertex=self.vertices[from_vertex_id],
-                    to_vertex=self.vertices[to_vertex_id],
-                    type=edge_type,
-                    depth_factor=depth_factor,
-                    filter_half_width=filter_half_width,
-                    filter_half_height=filter_half_height,
-                    stride_scale=stride_scale)
-        edge.model_id = -1
-
-        self.edges.append(edge)
-        self.vertices[from_vertex_id].edges_out.add(edge)
-        self.vertices[to_vertex_id].edges_in.add(edge)
-
-        return edge
 
     def calculate_flow(self):
         '''
@@ -146,6 +122,179 @@ class Individual(object):
 
         # return '\n'.join(_str)
         return json.dumps(net)
+
+    def uuid(self):
+        '''
+        编辑神经网络结构序列，要保证同一结构网络序列一致
+        '''
+        _str = []
+        # 先对edges进行排序，方便后续处理
+        e_list = []
+        for edg in self.edges:
+            ind_f = self.vertices.index(edg.from_vertex)
+            ind_t = self.vertices.index(edg.to_vertex)
+            e_list.append((ind_f, ind_t, edg))
+        e_list = sorted(e_list, key=lambda x: (x[0], x[1]))
+        
+        for index, vert in enumerate(self.vertices):
+            _sub_str = []
+            # 处理vertex层
+            if vert.type == 'linear':
+                _sub_str.append('linear')
+            elif vert.type == 'bn_relu':
+                _sub_str.append('bn_relu')
+            elif vert.type == 'Global Pooling':
+                # Global Pooling 实际上应包含最后的MLP层，但不写也没关系
+                _sub_str.append('Global Pooling')
+            # 处理edges_in
+            for inf_f, _, edg in e_list:
+                if edg in vert.edges_in:
+                    if edg.type == 'identity':
+                        _sub_str.append('identity')
+                    elif edg.type == 'conv':
+                        _sub_str.append('conv')
+                        _sub_str.append('from vertex%d' % (ind_f))
+                        _sub_str.append('depth_factor:%d' % (edg.depth_factor))
+                        _sub_str.append('filter_half_width:%d' % (edg.filter_half_width))
+                        _sub_str.append('filter_half_height:%d' % (edg.filter_half_height))
+                        _sub_str.append('stride_scale:%d' % (edg.stride_scale))
+            
+            _str.append('%s%s%s' % ('[', ','.join(_sub_str), ']'))
+        
+        _final_str_ = '-'.join(_str)
+        _final_utf8_str_= _final_str_.encode('utf-8')
+        _hash_key = hashlib.sha224(_final_utf8_str_).hexdigest()
+        return _hash_key, _final_str_
+
+    def file_string(self):
+        '''
+        生成pytorch文件中的
+        '''
+        # 先理顺卷积网络整体结构
+        self.calculate_flow()
+        # layer层初始化语句
+        unit_list = []
+        unit_list.append('self.globalPool = torch.nn.AdaptiveAvgPool2d((1, 1))')
+        unit_list.append('self.layer_vertex = torch.nn.ModuleList()')
+        for i, vertex in enumerate(self.vertices):
+            _str = ''
+            if vertex.type == 'bn_relu':
+                _str += 'self.layer_vertex.append(torch.nn.Sequential('
+                _str +=     'torch.nn.BatchNorm2d(%d),' % (vertex.input_channel)
+                _str +=     'torch.nn.ReLU(inplace=True)))'
+            elif vertex.type == 'Global Pooling':
+                _str += 'self.layer_vertex.append(torch.nn.Sequential('
+                _str += 'torch.nn.Linear(%d, %d)))' % (vertex.input_channel, self.output_size_channel)
+            else:
+                _str += 'self.layer_vertex.append(None)'
+            _str += '\n'
+            unit_list.append(_str)
+
+        unit_list.append('self.layer_edge = torch.nn.ModuleList()')
+        for i, edge in enumerate(self.edges):
+            _str = ''
+            if edge.type == 'conv':
+                _str += 'self.layer_edge.append(torch.nn.Conv2d(%d,' % (edge.input_channel)
+                _str +=                        '%d,' % (edge.output_channel)
+                _str +=                        'kernel_size=(%d,' % (edge.filter_half_height * 2 + 1)
+                _str +=                                     '%d),' % (edge.filter_half_width * 2 + 1)
+                _str +=                        'stride=pow(2, %d),' % (edge.stride_scale)
+                _str +=                        'padding=(%d, %d)))' % (edge.filter_half_height, edge.filter_half_width)
+                # TODO: 暂时未解决权值继承问题
+                # if edge.model_id != -1 or self.parent_model == None:
+                #     temp.weight = self.parent_model.layer_edge[i].weight
+                # self.layer_edge.append(temp)
+            else:
+                _str += 'self.layer_edge.append(None)'
+            _str += '\n'
+            unit_list.append(_str)
+        
+        # 向前传播forward语句
+        forward_list = []
+        forward_list.append('block_h = input.shape[0]')
+        forward_list.append('x0 = input')
+        for index, vert in enumerate(self.vertices[1:], start=1):
+            # _str = ''
+            # 处理edges in的过程
+            if len(vert.edges_in) == 1:
+                # 若只有一条链接边
+                edge = list(vert.edges_in)[0]
+                if edge.type == 'conv':
+                    ind_edg = self.edges.index(edge)
+                    # _str += 'x%d = self.layer_edge[%d](x%d)' % (index, ind_edg, index - 1)
+                    forward_list.append('x%d = self.layer_edge[%d](x%d)' % (index, ind_edg, index - 1))
+                else:
+                    # _str += 'x%d = x%d' % (index, index - 1)
+                    forward_list.append('x%d = x%d' % (index, index - 1))
+                # _str += '\n'
+            else:
+                _str = ''
+                # 本vertex接收链接数>1
+                ind = []
+                # 处理链接conv需要提前计算的语句
+                for j, edg in enumerate(self.vertices[index].edges_in):
+                    ind_edg = self.edges.index(edg)
+                    ind_x = self.vertices.index(edg.from_vertex)
+                    if edg.type == 'conv':
+                        # _str += 'e%d = self.layer_edge[%d](x%d)\n' % (ind_edg, ind_edg, ind_x)
+                        forward_list.append('e%d = self.layer_edge[%d](x%d)\n' % (ind_edg, ind_edg, ind_x))
+                    else:
+                        # _str += 'e%d = x%d\n' % (ind_edg, ind_x)
+                        forward_list.append('e%d = x%d\n' % (ind_edg, ind_x))
+                    ind.append(ind_edg)
+                # 处理矩阵拼接语句
+                _str += 'x%d = torch.cat([e%d' % (index, ind[0])
+                for i in ind[1:]:
+                    _str += ',e%d' % (i)
+                _str += '], dim=1)'
+                forward_list.append(_str)
+
+            # 处理vertex的计算
+            if self.vertices[index].type == 'linear':
+                # forward_list.append(_str)
+                continue
+            elif self.vertices[index].type == 'bn_relu':
+                # _str += 'x%d = self.layer_vertex[%d](x%d)\n' % (index, index, index)
+                forward_list.append('x%d = self.layer_vertex[%d](x%d)\n' % (index, index, index))
+            elif self.vertices[index].type == 'Global Pooling':
+                # _str += 'x%d = self.globalPool(x%d)\n' % (index, index)
+                forward_list.append('x%d = self.globalPool(x%d)\n' % (index, index))
+                # _str += 'x%d = torch.squeeze(x%d, 3)\n' % (index, index)
+                forward_list.append('x%d = torch.squeeze(x%d, 3)\n' % (index, index))
+                # _str += 'x%d = torch.squeeze(x%d, 2)\n' % (index, index)
+                forward_list.append('x%d = torch.squeeze(x%d, 2)\n' % (index, index))
+                # _str += 'x%d = self.layer_vertex[%d](x%d)\n' % (index, index, index)
+                forward_list.append('x%d = self.layer_vertex[%d](x%d)\n' % (index, index, index))
+            # forward_list.append(_str)
+        
+        forward_list.append('return x%d' % (len(self.vertices)-1))
+        return unit_list, forward_list
+
+    def add_edge(self,
+                 from_vertex_id,
+                 to_vertex_id,
+                 edge_type='identity',
+                 depth_factor=1,
+                 filter_half_width=None,
+                 filter_half_height=None,
+                 stride_scale=0):
+        """
+        Adds an edge to the DNA graph, ensuring internal consistency.
+        """
+        edge = Edge(from_vertex=self.vertices[from_vertex_id],
+                    to_vertex=self.vertices[to_vertex_id],
+                    type=edge_type,
+                    depth_factor=depth_factor,
+                    filter_half_width=filter_half_width,
+                    filter_half_height=filter_half_height,
+                    stride_scale=stride_scale)
+        edge.model_id = -1
+
+        self.edges.append(edge)
+        self.vertices[from_vertex_id].edges_out.add(edge)
+        self.vertices[to_vertex_id].edges_in.add(edge)
+
+        return edge
 
     def mutate_layer_size(self, v_list=[], s_list=[]):
         for i in range(len(v_list)):
@@ -211,140 +360,6 @@ class Individual(object):
                 return True
         return False
 
-    def uuid(self):
-        '''
-        编辑神经网络结构序列，要保证同一结构网络序列一致
-        '''
-        _str = []
-        # 先对edges进行排序，方便后续处理
-        e_list = []
-        for edg in self.edges:
-            ind_f = self.vertices.index(edg.from_vertex)
-            ind_t = self.vertices.index(edg.to_vertex)
-            e_list.append((ind_f, ind_t, edg))
-        e_list = sorted(e_list, key=lambda x: (x[0], x[1]))
-        
-        for index, vert in enumerate(self.vertices):
-            _sub_str = []
-            # 处理vertex层
-            if vert.type == 'linear':
-                _sub_str.append('linear')
-            elif vert.type == 'bn_relu':
-                _sub_str.append('bn_relu')
-            elif vert.type == 'Global Pooling':
-                # Global Pooling 实际上应包含最后的MLP层，但不写也没关系
-                _sub_str.append('Global Pooling')
-            # 处理edges_in
-            for inf_f, _, edg in e_list:
-                if edg in vert.edges_in:
-                    if edg.type == 'identity':
-                        _sub_str.append('identity')
-                    elif edg.type == 'conv':
-                        _sub_str.append('conv')
-                        _sub_str.append('from vertex%d' % (ind_f))
-                        _sub_str.append('depth_factor:%d' % (edg.depth_f))
-                        _sub_str.append('filter_half_width:%d' % (edg.filter_half_width))
-                        _sub_str.append('filter_half_height:%d' % (edg.filter_half_height))
-                        _sub_str.append('stride_scale:%d' % (edg.stride_scale))
-            
-            _str.append('%s%s%s' % ('[', ','.join(_sub_str), ']'))
-        
-        _final_str_ = '-'.join(_str)
-        _final_utf8_str_= _final_str_.encode('utf-8')
-        _hash_key = hashlib.sha224(_final_utf8_str_).hexdigest()
-        return _hash_key, _final_str_
-
-    def file_string(self):
-        '''
-        生成pytorch文件中的
-        '''
-        # 先理顺卷积网络整体结构
-        self.calculate_flow()
-        # layer层初始化语句
-        unit_list = []
-        unit_list.append('self.globalPool = torch.nn.AdaptiveAvgPool2d((1, 1))')
-        unit_list.append('self.layer_vertex = torch.nn.ModuleList()')
-        for i, vertex in enumerate(self.vertices):
-            _str = ''
-            if vertex.type == 'bn_relu':
-                _str += 'self.layer_vertex.append(torch.nn.Sequential('
-                _str +=     'torch.nn.BatchNorm2d(%d),' % (vertex.input_channel)
-                _str +=     'torch.nn.ReLU(inplace=True)))'
-            elif vertex.type == 'Global Pooling':
-                _str += 'self.layer_vertex.append(torch.nn.Sequential('
-                _str += 'torch.nn.Linear(%d, %d)))' % (vertex.input_channel, self.output_size_channel)
-            else:
-                _str += 'self.layer_vertex.append(None)'
-            _str += '\n'
-            unit_list.append(_str)
-
-        unit_list.append('self.layer_edge = torch.nn.ModuleList()')
-        for i, edge in enumerate(self.edges):
-            _str = ''
-            if edge.type == 'conv':
-                _str += 'self.layer_edge.append(torch.nn.Conv2d(%d,' % (edge.input_channel)
-                _str +=                        '%d,' % (edge.output_channel)
-                _str +=                        'kernel_size=(%d,' % (edge.filter_half_height * 2 + 1)
-                _str +=                                     '%d),' % (edge.filter_half_width * 2 + 1)
-                _str +=                        'stride=pow(2, %d),' % (edge.stride_scale)
-                _str +=                        'padding=(%d, %d)))' % (edge.filter_half_height, edge.filter_half_width)
-                # TODO: 暂时未解决权值继承问题
-                # if edge.model_id != -1 or self.parent_model == None:
-                #     temp.weight = self.parent_model.layer_edge[i].weight
-                # self.layer_edge.append(temp)
-            else:
-                _str += 'self.layer_edge.append(None)'
-            _str += '\n'
-            unit_list.append(_str)
-        
-        # 向前传播forward语句
-        forward_list = []
-        forward_list.append('block_h = input.shape[0]')
-        forward_list.append('x0 = input')
-        for index, vert in enumerate(self.vertices[1:], start=1):
-            _str = ''
-            # 处理edges in的过程
-            if len(vert.edges_in) == 1:
-                # 若只有一条链接边
-                edge = list(vert.edges_in)[0]
-                if edge.type == 'conv':
-                    ind_edg = self.edges.index(edge)
-                    _str += 'x%d = self.layer_edge[%d](x%d)' % (index, ind_edg, index - 1)
-                else:
-                    _str += 'x%d = x%d' % (index, index - 1)
-                _str += '\n'
-            else:
-                # 本vertex接收链接数>1
-                ind = []
-                # 处理链接conv需要提前计算的语句
-                for j, edg in enumerate(self.vertices[index].edges_in):
-                    ind_edg = self.edges.index(edg)
-                    ind_x = self.vertices.index(edg.from_vertex)
-                    if edg.type == 'conv':
-                        _str += 'e%d = self.layer_edge[%d](x%d)\n' % (ind_edg, ind_edg, ind_x)
-                    else:
-                        _str += 'e%d = x%d\n' % (ind_edg, ind_x)
-                    ind.append(ind_edg)
-                # 处理矩阵拼接语句
-                _str += 'x%d = torch.cat([e%d' % (index, ind[0])
-                for i in ind[1:]:
-                    _str += ',e%d' % (ind[i])
-                _str += '], dim=1)'
-            # 处理vertex的计算
-
-            if self.vertices[index].type == 'linear':
-                forward_list.append(_str)
-                continue
-            elif self.vertices[index].type == 'bn_relu':
-                _str += 'x%d = self.layer_vertex[%d](x%d)\n' % (index, index, index)
-            elif self.vertices[index].type == 'Global Pooling':
-                _str += 'x%d = self.globalPool(x%d)\n' % (index, index)
-                _str += 'x%d = torch.squeeze(x%d, 3)\n' % (index, index)
-                _str += 'x%d = torch.squeeze(x%d, 2)\n' % (index, index)
-                _str += 'x%d = self.layer_vertex[%d](x%d))\n' % (index, index, index)
-            forward_list.append(_str)
-        return unit_list, forward_list
-
 
 ######################################################################################################
 #
@@ -379,7 +394,7 @@ class Population(object):
             indi_no = 'indi%02d%02d' % (self.gen_no, self.number_id)
             indi.id = indi_no
             self.number_id += 1
-            indi.number_id = len(indi.units)
+            # indi.number_id = len(indi.units)
             self.individuals.append(indi)
 
     def __str__(self):

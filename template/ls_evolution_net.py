@@ -13,6 +13,9 @@ import multiprocessing
 from utils import StatusUpdateTool
 from thop import profile
 
+from collections import defaultdict, OrderedDict
+import json
+
 from MadeData import MadeData
 
 
@@ -22,23 +25,25 @@ class EvoCNNModel(nn.Module):
         #generated_init
 
 
-    def forward(self, x):
+    def forward(self, input):
         #generate_forward
         
 
 class TrainModel(object):
-    def __init__(self):
+    def __init__(self, learning_rate):
         '''
         需传入: 学习率、data
         '''
         # trainloader, validate_loader = data_loader.get_train_valid_loader('/home/yanan/train_data', batch_size=128, augment=True, valid_size=0.1, shuffle=True, random_seed=2312390, show_sample=False, num_workers=1, pin_memory=True)
         #testloader = data_loader.get_test_loader('/home/yanan/train_data', batch_size=128, shuffle=False, num_workers=1, pin_memory=True)
+        
         net = EvoCNNModel()
         cudnn.benchmark = True
-        net = net.cuda()
+        # net = net.cuda()
         criterion = nn.CrossEntropyLoss()
         best_acc = 0.0
 
+        self.data = MadeData()
         self.net = net
         self.criterion = criterion
         self.best_acc = best_acc
@@ -48,6 +53,8 @@ class TrainModel(object):
         #self.testloader = testloader
         #self.log_record(net, first_time=True)
         #self.log_record('+'*50, first_time=False)
+        self.num_class = StatusUpdateTool.get_num_class()
+        self.learning_rate = learning_rate
 
     def log_record(self, _str, first_time=None):
         dt = datetime.now()
@@ -63,59 +70,42 @@ class TrainModel(object):
 
     def train(self, epoch, train_loader):
         self.net.train()
-        # learning rate 学习率设置
-        # if epoch ==0: lr = 0.01
-        # if epoch > 0: lr = 0.1;
-        # if epoch > 148: lr = 0.01
-        # if epoch > 248: lr = 0.001
-        # optimizer = optim.SGD(self.net.parameters(), lr=lr, momentum=0.9, weight_decay=5e-4)
-        
-        # net = self.model_stack[dna.dna_cnt]
-        # print("[decode].[", dna.dna_cnt, "]", net)
-        optimizer = torch.optim.Adam(net.parameters(), lr=net.learning_rate)
+
+        optimizer = torch.optim.Adam(self.net.parameters(), lr=self.learning_rate)
         loss_func = torch.nn.CrossEntropyLoss()
 
-        # train_loader, testloader = self.data.getData()
-        accuracy = 0
-        # training and testing
-        for epoch in range(self.EPOCH):
-            step = 0
-            max_tep = int(60000 / train_loader.batch_size)
+        running_loss = 0.0
+        total = 0
+        correct = 0
+        for step, (b_x, b_y) in enumerate(train_loader):
+            output = self.net(b_x)  # cnn output
+            idy = b_y.view(-1, 1)
 
-            # train_acc = .0
-            # len_y = 0
-            running_loss = 0.0
-            total = 0
-            correct = 0
-            for step, (b_x, b_y) in enumerate(train_loader):
-                output = net(b_x)  # cnn output
-                idy = b_y.view(-1, 1)
+            loss = loss_func(output, b_y)  # cross entropy loss
+            # clear gradients for this training step
+            optimizer.zero_grad()
+            loss.backward()  # backpropagation, compute gradients
+            optimizer.step()  # apply gradients
 
-                loss = loss_func(output, b_y)  # cross entropy loss
-                # clear gradients for this training step
-                optimizer.zero_grad()
-                loss.backward()  # backpropagation, compute gradients
-                optimizer.step()  # apply gradients
-
-                # running_loss += loss.data[0]*labels.size(0)
-                running_loss += loss.data.numpy()*b_y.size(0)
-                _, predicted = torch.max(output.data, 1)
-                total += b_y.size(0)
-                correct += (predicted == b_y.data).sum()
+            # running_loss += loss.data[0]*labels.size(0)
+            running_loss += loss.data.numpy()*b_y.size(0)
+            _, predicted = torch.max(output.data, 1)
+            total += b_y.size(0)
+            # TODO: 经常是0.00
+            correct += (predicted == b_y.data).sum()
 
         self.log_record('Train-Epoch:%3d,  Loss: %.3f, Acc:%.3f'% (epoch+1, running_loss/total, (correct/total)))
 
     def test(self, epoch, testloader):
-        accuracy, test_loss = self.Accuracy(net, testloader)
+        accuracy, test_loss = self.Accuracy(self.net, testloader)
         # input = torch.randn(self.BATCH_SIZE, dna.input_size_channel, dna.input_size_height, dna.input_size_width)
-        t = testloader[0][0].size()
-        input = torch.randn(t[0], t[1], t[2], t[3])
-        flops, params = profile(net, inputs=(input, ))
+        
+        # TODO: 暂时不考虑关于FLOPS的计算
+        # t = testloader[0][0].size()
+        # input = torch.randn(t[0], t[1], t[2], t[3])
+        # flops, params = profile(self.net, inputs=(input, ))
         # print('----- Accuracy: {:.6f} Flops: {:.6f}-----'.format(accuracy, flops))
-        # dna.fitness = eval_acc / len_y
-        dna.fitness = accuracy
-        self.fitness_dir[dna.dna_cnt] = accuracy
-        # print('')
+
         
         if accuracy > self.best_acc:
             self.best_acc = accuracy
@@ -128,18 +118,22 @@ class TrainModel(object):
 
         test_loss = 0.0
         total = 0
-        class_correct = list(0. for i in range(self.N_CLASSES))
-        class_total = list(0. for i in range(self.N_CLASSES))
+        class_correct = list(0. for i in range(self.num_class))
+        class_total = list(0. for i in range(self.num_class))
         with torch.no_grad():
             for data in testloader:
                 images, labels = data
+                BATCH_SIZE = images.shape[0]
+
                 outputs = net(images)
 
+                total += labels.size(0)
                 loss = self.criterion(outputs, labels)
-                test_loss += loss.data[0]*labels.size(0)
+                # test_loss += loss.data[0]*labels.size(0)
+                test_loss += loss.item()*labels.size(0)
                 _, predicted = torch.max(outputs, 1)
                 c = (predicted == labels).squeeze()
-                for i in range(self.BATCH_SIZE):
+                for i in range(BATCH_SIZE):
                     label = labels[i]
                     class_correct[label] += c[i].item()
                     class_total[label] += 1
@@ -150,7 +144,7 @@ class TrainModel(object):
 
     def process(self):
         total_epoch = StatusUpdateTool.get_epoch_size()
-        train_loader, testloader = self.data.getData()
+        train_loader, testloader = self.data.CIFR10()
         for p in range(total_epoch):
             self.train(p, train_loader)
             self.test(total_epoch, testloader)
@@ -158,23 +152,65 @@ class TrainModel(object):
 
 
 class RunModel(object):
-    def do_work(self, gpu_id, file_id):
-        os.environ['CUDA_VISIBLE_DEVICES'] = gpu_id
-        best_acc = 0.0
+    def do_work(self, cpu_id, file_id, learning_rate):
+        os.environ['CUDA_VISIBLE_DEVICES'] = cpu_id
+        self.best_acc = 0.0
         try:
-            m = TrainModel()
-            m.log_record('Used GPU#%s, worker name:%s[%d]'%(gpu_id, multiprocessing.current_process().name, os.getpid()), first_time=True)
-            best_acc = m.process()
+            m = TrainModel(learning_rate)
+            m.log_record('Used CPU#%s, worker name:%s[%d]'%(cpu_id, multiprocessing.current_process().name, os.getpid()), first_time=True)
+            self.best_acc = m.process()
             #import random
             #best_acc = random.random()
         except BaseException as e:
             print('Exception occurs, file:%s, pid:%d...%s'%(file_id, os.getpid(), str(e)))
             m.log_record('Exception occur:%s'%(str(e)))
         finally:
-            m.log_record('Finished-Acc:%.3f'%best_acc)
+            m.log_record('Finished-Acc:%.3f' % self.best_acc)
+            # f = open('./populations/after_%s.json'%(file_id[4:6]), 'a+')
+            # f.write('%s=%.5f\n'%(file_id, self.best_acc))
+            # f.flush()
+            # f.close()
+            self.record_accuracy(file_id)
+    
+    def record_accuracy(self, file_id):
+        file_name = file_id
+        # self.log.info('%s has inherited the fitness as %.5f, no need to evaluate' %(file_name, indi.acc))
+        # f = open('./populations/after_%s.json' % (file_name[4:6]), 'a+')
+        # f.write('%s=%.5f\n' % (file_name, indi.acc))
+        
+        # 若没有after记录文件则初始化一个
+        if os.path.exists('./populations/after_%s.json' % (file_name[4:6])) != True:
+            after_dict = {
+                'version': "1.0",
+                'cache': [],
+                'explain': {
+                    'used': True,
+                    'details': "this is for after evaluate",
+                }
+            }
+            json_str = json.dumps(after_dict)
+            with open('./populations/after_%s.json' % (file_name[4:6]), 'w') as json_file:
+                json_file.write(json_str)
 
-            f = open('./populations/after_%s.txt'%(file_id[4:6]), 'a+')
-            f.write('%s=%.5f\n'%(file_id, best_acc))
-            f.flush()
-            f.close()
+        # 记录训练结果
+        f = open('./populations/after_%s.json' % (file_name[4:6]), 'r')
+        info = json.load(f)
+
+        individual = defaultdict(list)
+        individual["file_name"] = file_name
+        individual["accuracy"] = self.best_acc
+
+        # TODO: 若上一次系统运行的结果还在则需要进行覆盖
+        duplicate_indi = False
+        for i in info["cache"]:
+            if i["file_name"] == file_name:
+                i["accuracy"] = self.best_acc
+                duplicate_indi = True
+                break
+        if duplicate_indi == False:
+            info["cache"].append(individual)
+
+        json_str = json.dumps(info)
+        with open('./populations/after_%s.json' % (file_name[4:6]), 'w') as json_file:
+            json_file.write(json_str)
 """

@@ -63,6 +63,11 @@ class StatusUpdateTool(object):
     def get_epoch_size(cls):
         rs = cls.__read_ini_file('network', 'epoch')
         return int(rs)
+        
+    @classmethod
+    def get_learning_rate(cls):
+        rs = cls.__read_ini_file('network', 'learning_rate')
+        return float(rs)
 
     @classmethod
     def get_individual_max_length(cls):
@@ -187,6 +192,9 @@ class StatusUpdateTool(object):
         params['num_class'] = cls.get_num_class()
         params['genetic_prob'] = cls.get_genetic_probability()
 
+        params['epoch'] = cls.get_epoch_size()
+        params['learning_rate'] = cls.get_learning_rate()
+
         # params['min_resnet'], params['max_resnet'] = cls.get_resnet_limit()
         # params['min_pool'], params['max_pool'] = cls.get_pool_limit()
         # params['min_densenet'], params['max_densenet'] = cls.get_densenet_limit()
@@ -298,6 +306,76 @@ class GPUTools(object):
         else:
             return plain_info
 
+'''
+class CPUTools(object):
+    @classmethod
+    def _get_available_cpu_plain_info(cls):
+        cpu_info_list = []
+        #read the information
+        p = Popen('nvidia-smi', stdout=PIPE)
+        output_info = p.stdout.read().decode('UTF-8')
+        lines = output_info.split(os.linesep)
+        for line_no in range(len(lines)-3, -1, -1):
+            if lines[line_no].startswith('|==='):
+                break
+            else:
+                cpu_info_list.append(lines[line_no][1:-1].strip())
+        #parse the information
+        print(cpu_info_list)
+        if len(cpu_info_list) == 1:
+            if cpu_info_list[0].startswith('No'): #CPU outputs: No running processes found
+                return 10000 # indicating all the cpus are available
+            else:
+                info_array = cpu_info_list[0].split(' ', 1)
+                if info_array[0] == '0':
+                    Log.info('CPU_QUERY-CPU#1 and # are available, choose CPU#1')
+                    return 1
+                elif info_array[0] == '1':
+                    Log.info('CPU_QUERY-CPU#0 and #2 is available, choose CPU#2')
+                    return 2
+                else:
+                    Log.info('CPU_QUERY-CPU#0 and #1 is available, choose CPU#0')
+                    return 0
+
+        elif len(cpu_info_list) == 2:
+            info_array1 = cpu_info_list[0].split(' ', 1)
+            info_array2 = cpu_info_list[1].split(' ', 1)
+            cpu_use_list = [info_array1[0], info_array2[0]]
+            if '0' not in cpu_use_list:
+                Log.info('CPU_QUERY-CPU#0 is available')
+                return 0
+            if '1' not in cpu_use_list:
+                Log.info('CPU_QUERY-CPU#1 is available')
+                return 1
+            if '2' not in cpu_use_list:
+                Log.info('CPU_QUERY-CPU#2 is available')
+                return 2
+        else:
+            Log.info('CPU_QUERY-No available CPU')
+            return None
+
+    @classmethod
+    def all_cpu_available(cls):
+        plain_info = cls._get_available_cpu_plain_info()
+        if plain_info is not None and plain_info == 10000:
+            Log.info('CPU_QUERY-None of the CPU is occupied')
+            return True
+        else:
+            return False
+
+    @classmethod
+    def detect_availabel_cpu_id(cls):
+        plain_info = cls._get_available_cpu_plain_info()
+        if plain_info is None:
+            return None
+        elif plain_info == 10000:
+            Log.info('CPU_QUERY-None of the CPU is occupied, return the first one')
+            Log.info('CPU_QUERY-CPU#0 is available')
+            return 0
+        else:
+            return plain_info
+'''
+
 
 class Utils(object):
     _lock = multiprocessing.Lock()
@@ -322,7 +400,8 @@ class Utils(object):
     @classmethod
     def save_fitness_to_cache(cls, individuals):
         '''
-        由FitnessEvaluate.evaluate调用, 种群全部训练完成后
+        由FitnessEvaluate.evaluate调用, 种群全部训练完成后, 将个体结构存储起来, 防止出现同结构重复训练
+        TODO: 目前使用列表记录，应可使用映射
         '''
         _map = cls.load_cache_data()
         for indi in individuals:
@@ -343,7 +422,8 @@ class Utils(object):
                 with open('./populations/cache.json', 'w') as json_file:
                     json_file.write(json_str)
                 
-                _map[_key] = _acc
+                # _map[_key] = _acc
+            
             # if _key not in _map:
             #     Log.info('Add record into cache, id:%s, acc:%.5f'%(_key, _acc))
             #     f = open('./populations/cache.txt', 'a+')
@@ -373,6 +453,12 @@ class Utils(object):
         with open(file_name, 'w') as f:
             f.write(_str)
     
+    @classmethod
+    def save_population_after_mutation(cls, _str, gen_no):
+        file_name = './populations/mutation_%02d.json'%(gen_no)
+        with open(file_name, 'w') as f:
+            f.write(_str)
+
     @classmethod
     def load_population(cls, prefix, gen_no):
         '''
@@ -473,8 +559,15 @@ class Utils(object):
 
         # 创建py文件
         file_name = './scripts/%s.py' % (indi.id)
-        script_file_handler = open(file_name, 'w')
+        script_file_handler = open(file_name, 'w', encoding='UTF-8')
         script_file_handler.write('\n'.join(_str))
         # flush() 方法是用来刷新缓冲区的，即将缓冲区中的数据立刻写入文件，同时清空缓冲区，不需要是被动的等待输出缓冲区写入。
         script_file_handler.flush()
         script_file_handler.close()
+    
+    @classmethod
+    def write_to_file(cls, _str, _file):
+        f = open(_file, 'w')
+        f.write(_str)
+        f.flush()
+        f.close()

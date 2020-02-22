@@ -1,0 +1,1 @@
+{"version": "1.0", "cache": [{"file_name": "indi0100", "accuracy": 0.0}, {"file_name": "indi0102", "accuracy": 0.3122}, {"file_name": "indi0101", "accuracy": 0.0}, {"file_name": "indi0103", "accuracy": 0.0}, {"file_name": "indi0104", "accuracy": 0.0}], "explain": {"used": true, "details": "this is for after evaluate"}}

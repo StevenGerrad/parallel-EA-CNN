@@ -22,7 +22,7 @@ class EvolveCNN(object):
         pops = Population(params, 0)
         pops.initialize()
         self.pops = pops
-        # 建立并写入种群begintxt文件
+        # 建立并写入种群begin文件
         Utils.save_population_at_begin(str(pops), 0)
 
     def fitness_evaluate(self):
@@ -79,7 +79,7 @@ class EvolveCNN(object):
 
         """Here, the population information should be updated, such as the gene no and then to the individual id"""
         # 更新种群基本信息
-        next_gen_pops = Population(self.pops.params, self.pops.gen_no+1)
+        next_gen_pops = Population(self.pops.params, self.pops.gen_no + 1)
         next_gen_pops.create_from_offspring(next_individuals)
         self.pops = next_gen_pops
         for _, indi in enumerate(self.pops.individuals):
@@ -139,7 +139,7 @@ class EvolveCNN(object):
 if __name__ == '__main__':
     params = StatusUpdateTool.get_init_params()
     evoCNN = EvolveCNN(params)
-    evoCNN.do_work(max_gen=20)
+    evoCNN.do_work(max_gen=5)
 
 
 

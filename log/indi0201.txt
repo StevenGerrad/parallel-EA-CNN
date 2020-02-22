@@ -1,0 +1,8 @@
+[2020-02-22 18:30:45.732848]-Used CPU#0, worker name:Process-17[27476]
+[2020-02-22 19:19:57.962755]-Train-Epoch:  1,  Loss: 1.909, Acc:0.000
+[2020-02-22 19:20:10.989916]-Validate-Loss:1.782, Acc:0.322
+[2020-02-22 20:02:58.282476]-Train-Epoch:  2,  Loss: 1.782, Acc:0.000
+[2020-02-22 20:03:14.431875]-Validate-Loss:1.769, Acc:0.327
+[2020-02-22 20:04:49.799977]-Exception occur:[enforce fail at ..\c10\core\CPUAllocator.cpp:72] data. DefaultCPUAllocator: not enough memory: you tried to allocate 5529600 bytes. Buy new RAM!
+
+[2020-02-22 20:04:49.803966]-Finished-Acc:0.000
